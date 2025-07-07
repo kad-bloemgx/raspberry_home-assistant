@@ -13,16 +13,18 @@
 6. helm repo update
 7. helm search repo
 
+## new way to build and publish your helm repo
+https://www.youtube.com/watch?v=x4IF7yyWw9g
+
+https://github.com/devops4solutions/springboot-helm-chart/tree/main
 ## github pages
 
 - using github actions [pages-build-deployment ]
 
-    - [Repo](https://kad-bloemgx.github.io/helm-repo/)
-    - [Repo index.yaml](https://kad-bloemgx.github.io/helm-repo/index.yaml)
+    - [Repo](https://kad-bloemgx.github.io/raspberry_home-assistant/)
+    - [Repo index.yaml](https://kad-bloemgx.github.io/raspberry_home-assistant/index.yaml)
 
-## pgadmin
-
-
+    
 ## homeassistant
 
 
