@@ -1,0 +1,30 @@
+kind: Deployment
+apiVersion: apps/v1
+metadata:
+  name: {{ .Values.appName }}
+  namespace: {{ .Values.nameSpace }}
+  labels:
+    app: {{ .Values.appName }}
+spec:
+  replicas: {{ .Values.replicaCount }}
+  selector:
+    matchLabels:
+      app: {{ .Values.appName }}
+  template:
+    metadata:
+      labels:
+        app: {{ .Values.appName }}
+    spec:
+      containers:
+        - name: {{ .Values.appName }}
+          image: {{ .Values.image.repository }}:{{ .Values.image.tag }}
+          ports:
+              - containerPort: {{ .Values.container.port }}
+                name: {{ .Values.appName }}
+          volumeMounts:
+            - mountPath: "/config"
+              name: pv-storage-ha
+      volumes:
+        - name: pv-storage-ha
+          persistentVolumeClaim:
+            claimName: local-path-pvc

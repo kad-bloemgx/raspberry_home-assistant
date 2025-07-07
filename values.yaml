@@ -1,0 +1,11 @@
+replicaCount: 1
+
+appName: homeassistant
+nameSpace: homeassistant
+
+image:
+  repository: homeassistant/home-assistant
+  tag: "stable"
+
+container:
+  port: 8123

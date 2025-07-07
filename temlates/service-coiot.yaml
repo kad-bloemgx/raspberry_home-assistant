@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: nodeport-coiot
+  namespace: {{ .Values.nameSpace }}
+spec:
+  selector:
+    app: {{ .Values.appName }}
+  type: NodePort
+  ports:
+    - name: coiot
+      port: 5683
+      targetPort: 5683
+      nodePort: 30036
+      protocol: UDP
