@@ -5,7 +5,7 @@ nameSpace: homeassistant
 
 image:
   repository: homeassistant/home-assistant
-  tag: stable
+  tag: "stable"
 
 container:
   port: 8123
