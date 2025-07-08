@@ -12,6 +12,7 @@
 5. Commit and Push
 6. helm repo update
 7. helm search repo
+8. help
 
 ## New way to build and publish your helm repo from github and actions
 https://www.youtube.com/watch?v=x4IF7yyWw9g
