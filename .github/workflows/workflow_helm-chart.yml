@@ -1,3 +1,4 @@
+name: workflow_helm-chart.yml
 on:
   push:
     branches:
