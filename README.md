@@ -1,32 +1,30 @@
-# helm-repo raspberry_home-assistant
+#  raspberry_home-assistant 
 
-## how to build
+## How to build with github actions
 
-1. Create a new helm chart in the repo
-2. If update chache version number Chart.yaml
-   3Create helm package from terminal (IntelliJ)
-    - helm package [DIR] (~/IdeaProjects$ helm package ./raspberry_home-assistant/)
-     - mv package [DIR] (mv ./raspberry_home-assistant-1.0.7.tgz ./raspberry_home-assistant/)
-4. Update index.yaml from terminal (IntelliJ)
-    - helm repo index [DIR] (~/IdeaProjects/raspberry_home-assistant$ helm repo index .)
-5. Commit and Push
-6. helm repo update
-7. helm search repo
-8. help
+### workflow_helm-chart.yml
 
-## New way to build and publish your helm repo from github and actions
-https://www.youtube.com/watch?v=x4IF7yyWw9g
+Na elke push wordt er een workflow gestart.
+- Create helm-chart
+- Make a version
+- Publish github.io
 
-https://github.com/devops4solutions/springboot-helm-chart/tree/main
-## github pages
+Opmerking: Indien nieuwe versie gewenst is pas "version:" aan in de Chart.yaml
 
-- using github actions [pages-build-deployment ]
 
-    - [Repo](https://kad-bloemgx.github.io/raspberry_home-assistant/)
-    - [Repo index.yaml](https://kad-bloemgx.github.io/raspberry_home-assistant/index.yaml)
+
+#### Achtergrondinformatie
+1. https://www.youtube.com/watch?v=x4IF7yyWw9g
+2. https://github.com/devops4solutions/springboot-helm-chart/tree/main
+
+#### github pages
+
+
+1. [repo](https://kad-bloemgx.github.io/raspberry_home-assistant/)
+2. [repo index](https://kad-bloemgx.github.io/raspberry_home-assistant/index.yaml)
 
     
-## homeassistant
+## homeassistant informatie
 
 
 | key            | Value                                     |
