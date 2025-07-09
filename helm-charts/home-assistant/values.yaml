@@ -1,7 +1,7 @@
 replicaCount: 1
 
 appName: homeassistant
-nameSpace: homeassistant
+nameSpace: default
 
 image:
   repository: homeassistant/home-assistant
