@@ -13,6 +13,7 @@ Opmerking: Indien nieuwe versie gewenst is pas "version:" aan in de Chart.yaml
 
 
 
+
 #### Achtergrondinformatie
 1. https://www.youtube.com/watch?v=x4IF7yyWw9g
 2. https://github.com/devops4solutions/springboot-helm-chart/tree/main
