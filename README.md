@@ -28,6 +28,7 @@ Opmerking: Indien nieuwe versie gewenst is pas "version:" aan in de Chart.yaml
 
 ## helm commands
 
+
 - helm repo list
 - helm repo add raspberry_home-assistant https://kad-bloemgx.github.io/raspberry_home-assistant
 - helm search repo raspberry_home-assistant
