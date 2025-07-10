@@ -1,11 +1,17 @@
+# Beschrijving
 name: workflow_helm-chart.yml
+# Event push on the main branch
 on:
   push:
     branches:
       - master
+  # Manually trigger
   workflow_dispatch:
+permissions: write-all
+# Job    Event push on the main branch
 jobs:
   build:
+    # Choosing the runner (GitHub hosted runner)
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
