@@ -20,8 +20,12 @@ jobs:
         uses: actions/configure-pages@v5
       - name: Build Pages
         uses: actions/jekyll-build-pages@v1
+        with:
+          destination: "./output"
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
+        with:
+          path: "./output"
   release:
     needs: build
     permissions:
