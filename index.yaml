@@ -3,6 +3,16 @@ entries:
   raspberry_home-assistant:
   - apiVersion: v2
     appVersion: 1.18.0
+    created: "2025-07-10T15:28:18.638188257Z"
+    description: A Helm chart for Kubernetes
+    digest: 2e6f209d961e55d54fbeb1454c386a3e7eb0bd28554f44dac1e21687dfd3a7fe
+    name: raspberry_home-assistant
+    type: application
+    urls:
+    - https://github.com/kad-bloemgx/raspberry_home-assistant/releases/download/raspberry_home-assistant-1.2.5/raspberry_home-assistant-1.2.5.tgz
+    version: 1.2.5
+  - apiVersion: v2
+    appVersion: 1.18.0
     created: "2025-07-10T14:14:27.183712177Z"
     description: A Helm chart for Kubernetes
     digest: bde4d1df91677a2362007effa2fa52fd3ffd9b1ad055bdd2e3d5ed01832fea33
@@ -152,4 +162,4 @@ entries:
     urls:
     - https://github.com/kad-bloemgx/raspberry_home-assistant/releases/download/raspberry_traefik-1.0.2/raspberry_traefik-1.0.2.tgz
     version: 1.0.2
-generated: "2025-07-10T14:14:27.183808138Z"
+generated: "2025-07-10T15:28:18.638367504Z"
