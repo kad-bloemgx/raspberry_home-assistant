@@ -22,20 +22,6 @@ shell_command:
   convert_solar_data_inverter: python /config/python_scripts/inverter_html2json.py --url http://192.168.1.70/cgi-bin/parameters
   convert_solar_data_ecu: python /config/python_scripts/ecu_html2json.py --url http://192.168.1.70/cgi-bin/home
 
-notify:
-  - name: sendmail
-    platform: smtp
-    server: smtp.gmail.com
-    port: 587
-    timeout: 15
-    sender: gerard.bloemendaal@gmail.com
-    encryption: starttls
-    username: gerard.bloemendaal@gmail.com
-    password: Jf01Kd83!
-    recipient:
-      - gerard.bloemendaal@gmail.com
-      - gerard.bloemendaal@kadaster.nl
-
 sensor:
   #    HACS component tijdelijk uitgezet vanwege error meldingen
   #  - platform: apsystems
