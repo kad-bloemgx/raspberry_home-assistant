@@ -1,0 +1,494 @@
+default_config:
+automation: !include automations.yaml
+backup:
+energy:
+python_script:
+logger:
+  default: error
+http:
+  use_x_forwarded_for: true
+  trusted_proxies:
+    - 10.42.0.0/16
+homeassistant:
+  auth_providers:
+    - type: trusted_networks
+      trusted_networks:
+        - 192.168.0.0/24
+    - type: homeassistant
+  auth_mfa_modules:
+    - type: totp
+
+shell_command:
+  convert_solar_data_inverter: python /config/python_scripts/inverter_html2json.py --url http://192.168.1.70/cgi-bin/parameters
+  convert_solar_data_ecu: python /config/python_scripts/ecu_html2json.py --url http://192.168.1.70/cgi-bin/home
+
+notify:
+  - name: sendmail
+    platform: smtp
+    server: smtp.gmail.com
+    port: 587
+    timeout: 15
+    sender: gerard.bloemendaal@gmail.com
+    encryption: starttls
+    username: gerard.bloemendaal@gmail.com
+    password: Jf01Kd83!
+    recipient:
+      - gerard.bloemendaal@gmail.com
+      - gerard.bloemendaal@kadaster.nl
+
+sensor:
+  #    HACS component tijdelijk uitgezet vanwege error meldingen
+  #  - platform: apsystems
+  #    authId: 2c9f934a8ae1809f018b00ed0f993808
+  #    systemId: 0b28481b630b364b0163281a400b3ae5
+  #    ecuId: 213000031723
+  #    sunset: off
+
+  - platform: template
+    sensors:
+      solar_panels_total_power:
+        unique_id: "total_solar_power"
+        friendly_name: "Total Solar Power"
+        unit_of_measurement: "W"
+        value_template: >
+          {{ (
+             states('sensor.solar_panel_501000014054_4_power')|float(default=0) +
+             states('sensor.solar_panel_501000014191_1_power')|float(default=0) +
+             states('sensor.solar_panel_501000025147_2_power')|float(default=0) +
+             states('sensor.solar_panel_501000014054_2_power')|float(default=0) +
+             states('sensor.solar_panel_501000014043_2_power')|float(default=0) +
+             states('sensor.solar_panel_501000014031_2_power')|float(default=0) +
+             states('sensor.solar_panel_501000014031_3_power')|float(default=0) +
+             states('sensor.solar_panel_501000014191_4_power')|float(default=0) +
+             states('sensor.solar_panel_501000014031_4_power')|float(default=0) +
+             states('sensor.solar_panel_501000014043_4_power')|float(default=0) +
+             states('sensor.solar_panel_501000014191_3_power')|float(default=0) +
+             states('sensor.solar_panel_501000014191_2_power')|float(default=0) +
+             states('sensor.solar_panel_501000025147_1_power')|float(default=0) +
+             states('sensor.solar_panel_501000014054_1_power')|float(default=0) +
+             states('sensor.solar_panel_501000019070_2_power')|float(default=0) +
+             states('sensor.solar_panel_501000014043_1_power')|float(default=0) +
+             states('sensor.solar_panel_501000025147_4_power')|float(default=0) +
+             states('sensor.solar_panel_501000019070_1_power')|float(default=0) +
+             states('sensor.solar_panel_501000014031_1_power')|float(default=0) +
+             states('sensor.solar_panel_501000014043_3_power')|float(default=0) +
+             states('sensor.solar_panel_501000025147_3_power')|float(default=0) +
+             states('sensor.solar_panel_501000014054_3_power')|float(default=0) +
+             states('sensor.solar_panel_501000019070_4_power')|float(default=0) +
+             states('sensor.solar_panel_501000019070_3_power')|float(default=0)
+          ) }}
+
+rest:
+  - resource: http://localhost:8123/local/power_data_inverter_copy.json
+    sensor:
+      - name: "Solar Panel 501000025147 1 power"
+        unique_id: "solar_panel_501000025147_1_power"
+        value_template: '{{ value_json["501000025147-1"][0] }}'
+        unit_of_measurement: "W"
+      - name: "Solar Panel 501000025147 1 grid frequency"
+        unique_id: "solar_panel_501000025147_1_grid_frequency"
+        value_template: '{{ value_json["501000025147-1"][1] }}'
+        unit_of_measurement: "Hz"
+      - name: "Solar Panel 501000025147 1 grid voltage"
+        unique_id: "solar_panel_501000025147_1_grid_voltage"
+        value_template: '{{ value_json["501000025147-1"][2] }}'
+        unit_of_measurement: "V"
+      - name: "Solar Panel 501000025147 1 temperature"
+        unique_id: "solar_panel_501000025147_1_temperature"
+        value_template: '{{ value_json["501000025147-1"][3] }}'
+        unit_of_measurement: "°C"
+      - name: "Solar Panel 501000025147 2 power"
+        unique_id: "solar_panel_501000025147_2_power"
+        value_template: '{{ value_json["501000025147-2"][0] }}'
+        unit_of_measurement: "W"
+      - name: "Solar Panel 501000025147 2 grid frequency"
+        unique_id: "solar_panel_501000025147_2_grid_frequency"
+        value_template: '{{ value_json["501000025147-2"][1] }}'
+        unit_of_measurement: "Hz"
+      - name: "Solar Panel 501000025147 2 grid voltage"
+        unique_id: "solar_panel_501000025147_2_grid_voltage"
+        value_template: '{{ value_json["501000025147-2"][2] }}'
+        unit_of_measurement: "V"
+      - name: "Solar Panel 501000025147 2 temperature"
+        unique_id: "solar_panel_501000025147_2_temperature"
+        value_template: '{{ value_json["501000025147-2"][3] }}'
+        unit_of_measurement: "°C"
+      - name: "Solar Panel 501000025147 3 power"
+        unique_id: "solar_panel_501000025147_3_power"
+        value_template: '{{ value_json["501000025147-3"][0] }}'
+        unit_of_measurement: "W"
+      - name: "Solar Panel 501000025147 3 grid frequency"
+        unique_id: "solar_panel_501000025147_3_grid_frequency"
+        value_template: '{{ value_json["501000025147-3"][1] }}'
+        unit_of_measurement: "Hz"
+      - name: "Solar Panel 501000025147 3 grid voltage"
+        unique_id: "solar_panel_501000025147_3_grid_voltage"
+        value_template: '{{ value_json["501000025147-3"][2] }}'
+        unit_of_measurement: "V"
+      - name: "Solar Panel 501000025147 3 temperature"
+        unique_id: "solar_panel_501000025147_3_temperature"
+        value_template: '{{ value_json["501000025147-3"][3] }}'
+        unit_of_measurement: "°C"
+      - name: "Solar Panel 501000025147 4 power"
+        unique_id: "solar_panel_501000025147_4_power"
+        value_template: '{{ value_json["501000025147-4"][0] }}'
+        unit_of_measurement: "W"
+      - name: "Solar Panel 501000025147 4 grid frequency"
+        unique_id: "solar_panel_501000025147_4_grid_frequency"
+        value_template: '{{ value_json["501000025147-4"][1] }}'
+        unit_of_measurement: "Hz"
+      - name: "Solar Panel 501000025147 4 grid voltage"
+        unique_id: "solar_panel_501000025147_4_grid_voltage"
+        value_template: '{{ value_json["501000025147-4"][2] }}'
+        unit_of_measurement: "V"
+      - name: "Solar Panel 501000025147 4 temperature"
+        unique_id: "solar_panel_501000025147_4_temperature"
+        value_template: '{{ value_json["501000025147-4"][3] }}'
+        unit_of_measurement: "°C"
+      - name: "Solar Panel 501000014191 1 power"
+        unique_id: "solar_panel_501000014191_1_power"
+        value_template: '{{ value_json["501000014191-1"][0] }}'
+        unit_of_measurement: "W"
+      - name: "Solar Panel 501000014191 1 grid frequency"
+        unique_id: "solar_panel_501000014191_1_grid_frequency"
+        value_template: '{{ value_json["501000014191-1"][1] }}'
+        unit_of_measurement: "Hz"
+      - name: "Solar Panel 501000014191 1 grid voltage"
+        unique_id: "solar_panel_501000014191_1_grid_voltage"
+        value_template: '{{ value_json["501000014191-1"][2] }}'
+        unit_of_measurement: "V"
+      - name: "Solar Panel 501000014191 1 temperature"
+        unique_id: "solar_panel_501000014191_1_temperature"
+        value_template: '{{ value_json["501000014191-1"][3] }}'
+        unit_of_measurement: "°C"
+      - name: "Solar Panel 501000014191 2 power"
+        unique_id: "solar_panel_501000014191_2_power"
+        value_template: '{{ value_json["501000014191-2"][0] }}'
+        unit_of_measurement: "W"
+      - name: "Solar Panel 501000014191 2 grid frequency"
+        unique_id: "solar_panel_501000014191_2_grid_frequency"
+        value_template: '{{ value_json["501000014191-2"][1] }}'
+        unit_of_measurement: "Hz"
+      - name: "Solar Panel 501000014191 2 grid voltage"
+        unique_id: "solar_panel_501000014191_2_grid_voltage"
+        value_template: '{{ value_json["501000014191-2"][2] }}'
+        unit_of_measurement: "V"
+      - name: "Solar Panel 501000014191 2 temperature"
+        unique_id: "solar_panel_501000014191_2_temperature"
+        value_template: '{{ value_json["501000014191-2"][3] }}'
+        unit_of_measurement: "°C"
+      - name: "Solar Panel 501000014191 3 power"
+        unique_id: "solar_panel_501000014191_3_power"
+        value_template: '{{ value_json["501000014191-3"][0] }}'
+        unit_of_measurement: "W"
+      - name: "Solar Panel 501000014191 3 grid frequency"
+        unique_id: "solar_panel_501000014191_3_grid_frequency"
+        value_template: '{{ value_json["501000014191-3"][1] }}'
+        unit_of_measurement: "Hz"
+      - name: "Solar Panel 501000014191 3 grid voltage"
+        unique_id: "solar_panel_501000014191_3_grid_voltage"
+        value_template: '{{ value_json["501000014191-3"][2] }}'
+        unit_of_measurement: "V"
+      - name: "Solar Panel 501000014191 3 temperature"
+        unique_id: "solar_panel_501000014191_3_temperature"
+        value_template: '{{ value_json["501000014191-3"][3] }}'
+        unit_of_measurement: "°C"
+      - name: "Solar Panel 501000014191 4 power"
+        unique_id: "solar_panel_501000014191_4_power"
+        value_template: '{{ value_json["501000014191-4"][0] }}'
+        unit_of_measurement: "W"
+      - name: "Solar Panel 501000014191 4 grid frequency"
+        unique_id: "solar_panel_501000014191_4_grid_frequency"
+        value_template: '{{ value_json["501000014191-4"][1] }}'
+        unit_of_measurement: "Hz"
+      - name: "Solar Panel 501000014191 4 grid voltage"
+        unique_id: "solar_panel_501000014191_4_grid_voltage"
+        value_template: '{{ value_json["501000014191-4"][2] }}'
+        unit_of_measurement: "V"
+      - name: "Solar Panel 501000014191 4 temperature"
+        unique_id: "solar_panel_501000014191_4_temperature"
+        value_template: '{{ value_json["501000014191-4"][3] }}'
+        unit_of_measurement: "°C"
+      - name: "Solar Panel 501000014054 1 power"
+        unique_id: "solar_panel_501000014054_1_power"
+        value_template: '{{ value_json["501000014054-1"][0] }}'
+        unit_of_measurement: "W"
+      - name: "Solar Panel 501000014054 1 grid frequency"
+        unique_id: "solar_panel_501000014054_1_grid_frequency"
+        value_template: '{{ value_json["501000014054-1"][1] }}'
+        unit_of_measurement: "Hz"
+      - name: "Solar Panel 501000014054 1 grid voltage"
+        unique_id: "solar_panel_501000014054_1_grid_voltage"
+        value_template: '{{ value_json["501000014054-1"][2] }}'
+        unit_of_measurement: "V"
+      - name: "Solar Panel 501000014054 1 temperature"
+        unique_id: "solar_panel_501000014054_1_temperature"
+        value_template: '{{ value_json["501000014054-1"][3] }}'
+        unit_of_measurement: "°C"
+      - name: "Solar Panel 501000014054 2 power"
+        unique_id: "solar_panel_501000014054_2_power"
+        value_template: '{{ value_json["501000014054-2"][0] }}'
+        unit_of_measurement: "W"
+      - name: "Solar Panel 501000014054 2 grid frequency"
+        unique_id: "solar_panel_501000014054_2_grid_frequency"
+        value_template: '{{ value_json["501000014054-2"][1] }}'
+        unit_of_measurement: "Hz"
+      - name: "Solar Panel 501000014054 2 grid voltage"
+        unique_id: "solar_panel_501000014054_2_grid_voltage"
+        value_template: '{{ value_json["501000014054-2"][2] }}'
+        unit_of_measurement: "V"
+      - name: "Solar Panel 501000014054 2 temperature"
+        unique_id: "solar_panel_501000014054_2_temperature"
+        value_template: '{{ value_json["501000014054-2"][3] }}'
+        unit_of_measurement: "°C"
+      - name: "Solar Panel 501000014054 3 power"
+        unique_id: "solar_panel_501000014054_3_power"
+        value_template: '{{ value_json["501000014054-3"][0] }}'
+        unit_of_measurement: "W"
+      - name: "Solar Panel 501000014054 3 grid frequency"
+        unique_id: "solar_panel_501000014054_3_grid_frequency"
+        value_template: '{{ value_json["501000014054-3"][1] }}'
+        unit_of_measurement: "Hz"
+      - name: "Solar Panel 501000014054 3 grid voltage"
+        unique_id: "solar_panel_501000014054_3_grid_voltage"
+        value_template: '{{ value_json["501000014054-3"][2] }}'
+        unit_of_measurement: "V"
+      - name: "Solar Panel 501000014054 3 temperature"
+        unique_id: "solar_panel_501000014054_3_temperature"
+        value_template: '{{ value_json["501000014054-3"][3] }}'
+        unit_of_measurement: "°C"
+      - name: "Solar Panel 501000014054 4 power"
+        unique_id: "solar_panel_501000014054_4_power"
+        value_template: '{{ value_json["501000014054-4"][0] }}'
+        unit_of_measurement: "W"
+      - name: "Solar Panel 501000014054 4 grid frequency"
+        unique_id: "solar_panel_501000014054_4_grid_frequency"
+        value_template: '{{ value_json["501000014054-4"][1] }}'
+        unit_of_measurement: "Hz"
+      - name: "Solar Panel 501000014054 4 grid voltage"
+        unique_id: "solar_panel_501000014054_4_grid_voltage"
+        value_template: '{{ value_json["501000014054-4"][2] }}'
+        unit_of_measurement: "V"
+      - name: "Solar Panel 501000014054 4 temperature"
+        unique_id: "solar_panel_501000014054_4_temperature"
+        value_template: '{{ value_json["501000014054-4"][3] }}'
+        unit_of_measurement: "°C"
+      - name: "Solar Panel 501000014043 1 power"
+        unique_id: "solar_panel_501000014043_1_power"
+        value_template: '{{ value_json["501000014043-1"][0] }}'
+        unit_of_measurement: "W"
+      - name: "Solar Panel 501000014043 1 grid frequency"
+        unique_id: "solar_panel_501000014043_1_grid_frequency"
+        value_template: '{{ value_json["501000014043-1"][1] }}'
+        unit_of_measurement: "Hz"
+      - name: "Solar Panel 501000014043 1 grid voltage"
+        unique_id: "solar_panel_501000014043_1_grid_voltage"
+        value_template: '{{ value_json["501000014043-1"][2] }}'
+        unit_of_measurement: "V"
+      - name: "Solar Panel 501000014043 1 temperature"
+        unique_id: "solar_panel_501000014043_1_temperature"
+        value_template: '{{ value_json["501000014043-1"][3] }}'
+        unit_of_measurement: "°C"
+      - name: "Solar Panel 501000014043 2 power"
+        unique_id: "solar_panel_501000014043_2_power"
+        value_template: '{{ value_json["501000014043-2"][0] }}'
+        unit_of_measurement: "W"
+      - name: "Solar Panel 501000014043 2 grid frequency"
+        unique_id: "solar_panel_501000014043_2_grid_frequency"
+        value_template: '{{ value_json["501000014043-2"][1] }}'
+        unit_of_measurement: "Hz"
+      - name: "Solar Panel 501000014043 2 grid voltage"
+        unique_id: "solar_panel_501000014043_2_grid_voltage"
+        value_template: '{{ value_json["501000014043-2"][2] }}'
+        unit_of_measurement: "V"
+      - name: "Solar Panel 501000014043 2 temperature"
+        unique_id: "solar_panel_501000014043_2_temperature"
+        value_template: '{{ value_json["501000014043-2"][3] }}'
+        unit_of_measurement: "°C"
+      - name: "Solar Panel 501000014043 3 power"
+        unique_id: "solar_panel_501000014043_3_power"
+        value_template: '{{ value_json["501000014043-3"][0] }}'
+        unit_of_measurement: "W"
+      - name: "Solar Panel 501000014043 3 grid frequency"
+        unique_id: "solar_panel_501000014043_3_grid_frequency"
+        value_template: '{{ value_json["501000014043-3"][1] }}'
+        unit_of_measurement: "Hz"
+      - name: "Solar Panel 501000014043 3 grid voltage"
+        unique_id: "solar_panel_501000014043_3_grid_voltage"
+        value_template: '{{ value_json["501000014043-3"][2] }}'
+        unit_of_measurement: "V"
+      - name: "Solar Panel 501000014043 3 temperature"
+        unique_id: "solar_panel_501000014043_3_temperature"
+        value_template: '{{ value_json["501000014043-3"][3] }}'
+        unit_of_measurement: "°C"
+      - name: "Solar Panel 501000014043 4 power"
+        unique_id: "solar_panel_501000014043_4_power"
+        value_template: '{{ value_json["501000014043-4"][0] }}'
+        unit_of_measurement: "W"
+      - name: "Solar Panel 501000014043 4 grid frequency"
+        unique_id: "solar_panel_501000014043_4_grid_frequency"
+        value_template: '{{ value_json["501000014043-4"][1] }}'
+        unit_of_measurement: "Hz"
+      - name: "Solar Panel 501000014043 4 grid voltage"
+        unique_id: "solar_panel_501000014043_4_grid_voltage"
+        value_template: '{{ value_json["501000014043-4"][2] }}'
+        unit_of_measurement: "V"
+      - name: "Solar Panel 501000014043 4 temperature"
+        unique_id: "solar_panel_501000014043_4_temperature"
+        value_template: '{{ value_json["501000014043-4"][3] }}'
+        unit_of_measurement: "°C"
+      - name: "Solar Panel 501000014031 1 power"
+        unique_id: "solar_panel_501000014031_1_power"
+        value_template: '{{ value_json["501000014031-1"][0] }}'
+        unit_of_measurement: "W"
+      - name: "Solar Panel 501000014031 1 grid frequency"
+        unique_id: "solar_panel_501000014031_1_grid_frequency"
+        value_template: '{{ value_json["501000014031-1"][1] }}'
+        unit_of_measurement: "Hz"
+      - name: "Solar Panel 501000014031 1 grid voltage"
+        unique_id: "solar_panel_501000014031_1_grid_voltage"
+        value_template: '{{ value_json["501000014031-1"][2] }}'
+        unit_of_measurement: "V"
+      - name: "Solar Panel 501000014031 1 temperature"
+        unique_id: "solar_panel_501000014031_1_temperature"
+        value_template: '{{ value_json["501000014031-1"][3] }}'
+        unit_of_measurement: "°C"
+      - name: "Solar Panel 501000014031 2 power"
+        unique_id: "solar_panel_501000014031_2_power"
+        value_template: '{{ value_json["501000014031-2"][0] }}'
+        unit_of_measurement: "W"
+      - name: "Solar Panel 501000014031 2 grid frequency"
+        unique_id: "solar_panel_501000014031_2_grid_frequency"
+        value_template: '{{ value_json["501000014031-2"][1] }}'
+        unit_of_measurement: "Hz"
+      - name: "Solar Panel 501000014031 2 grid voltage"
+        unique_id: "solar_panel_501000014031_2_grid_voltage"
+        value_template: '{{ value_json["501000014031-2"][2] }}'
+        unit_of_measurement: "V"
+      - name: "Solar Panel 501000014031 2 temperature"
+        unique_id: "solar_panel_501000014031_2_temperature"
+        value_template: '{{ value_json["501000014031-2"][3] }}'
+        unit_of_measurement: "°C"
+      - name: "Solar Panel 501000014031 3 power"
+        unique_id: "solar_panel_501000014031_3_power"
+        value_template: '{{ value_json["501000014031-3"][0] }}'
+        unit_of_measurement: "W"
+      - name: "Solar Panel 501000014031 3 grid frequency"
+        unique_id: "solar_panel_501000014031_3_grid_frequency"
+        value_template: '{{ value_json["501000014031-3"][1] }}'
+        unit_of_measurement: "Hz"
+      - name: "Solar Panel 501000014031 3 grid voltage"
+        unique_id: "solar_panel_501000014031_3_grid_voltage"
+        value_template: '{{ value_json["501000014031-3"][2] }}'
+        unit_of_measurement: "V"
+      - name: "Solar Panel 501000014031 3 temperature"
+        unique_id: "solar_panel_501000014031_3_temperature"
+        value_template: '{{ value_json["501000014031-3"][3] }}'
+        unit_of_measurement: "°C"
+      - name: "Solar Panel 501000014031 4 power"
+        unique_id: "solar_panel_501000014031_4_power"
+        value_template: '{{ value_json["501000014031-4"][0] }}'
+        unit_of_measurement: "W"
+      - name: "Solar Panel 501000014031 4 grid frequency"
+        unique_id: "solar_panel_501000014031_4_grid_frequency"
+        value_template: '{{ value_json["501000014031-4"][1] }}'
+        unit_of_measurement: "Hz"
+      - name: "Solar Panel 501000014031 4 grid voltage"
+        unique_id: "solar_panel_501000014031_4_grid_voltage"
+        value_template: '{{ value_json["501000014031-4"][2] }}'
+        unit_of_measurement: "V"
+      - name: "Solar Panel 501000014031 4 temperature"
+        unique_id: "solar_panel_501000014031_4_temperature"
+        value_template: '{{ value_json["501000014031-4"][3] }}'
+        unit_of_measurement: "°C"
+      - name: "Solar Panel 501000019070 1 power"
+        unique_id: "solar_panel_501000019070_1_power"
+        value_template: '{{ value_json["501000019070-1"][0] }}'
+        unit_of_measurement: "W"
+      - name: "Solar Panel 501000019070 1 grid frequency"
+        unique_id: "solar_panel_501000019070_1_grid_frequency"
+        value_template: '{{ value_json["501000019070-1"][1] }}'
+        unit_of_measurement: "Hz"
+      - name: "Solar Panel 501000019070 1 grid voltage"
+        unique_id: "solar_panel_501000019070_1_grid_voltage"
+        value_template: '{{ value_json["501000019070-1"][2] }}'
+        unit_of_measurement: "V"
+      - name: "Solar Panel 501000019070 1 temperature"
+        unique_id: "solar_panel_501000019070_1_temperature"
+        value_template: '{{ value_json["501000019070-1"][3] }}'
+        unit_of_measurement: "°C"
+      - name: "Solar Panel 501000019070 2 power"
+        unique_id: "solar_panel_501000019070_2_power"
+        value_template: '{{ value_json["501000019070-2"][0] }}'
+        unit_of_measurement: "W"
+      - name: "Solar Panel 501000019070 2 grid frequency"
+        unique_id: "solar_panel_501000019070_2_grid_frequency"
+        value_template: '{{ value_json["501000019070-2"][1] }}'
+        unit_of_measurement: "Hz"
+      - name: "Solar Panel 501000019070 2 grid voltage"
+        unique_id: "solar_panel_501000019070_2_grid_voltage"
+        value_template: '{{ value_json["501000019070-2"][2] }}'
+        unit_of_measurement: "V"
+      - name: "Solar Panel 501000019070 2 temperature"
+        unique_id: "solar_panel_501000019070_2_temperature"
+        value_template: '{{ value_json["501000019070-2"][3] }}'
+        unit_of_measurement: "°C"
+      - name: "Solar Panel 501000019070 3 power"
+        unique_id: "solar_panel_501000019070_3_power"
+        value_template: '{{ value_json["501000019070-3"][0] }}'
+        unit_of_measurement: "W"
+      - name: "Solar Panel 501000019070 3 grid frequency"
+        unique_id: "solar_panel_501000019070_3_grid_frequency"
+        value_template: '{{ value_json["501000019070-3"][1] }}'
+        unit_of_measurement: "Hz"
+      - name: "Solar Panel 501000019070 3 grid voltage"
+        unique_id: "solar_panel_501000019070_3_grid_voltage"
+        value_template: '{{ value_json["501000019070-3"][2] }}'
+        unit_of_measurement: "V"
+      - name: "Solar Panel 501000019070 3 temperature"
+        unique_id: "solar_panel_501000019070_3_temperature"
+        value_template: '{{ value_json["501000019070-3"][3] }}'
+        unit_of_measurement: "°C"
+      - name: "Solar Panel 501000019070 4 power"
+        unique_id: "solar_panel_501000019070_4_power"
+        value_template: '{{ value_json["501000019070-4"][0] }}'
+        unit_of_measurement: "W"
+      - name: "Solar Panel 501000019070 4 grid frequency"
+        unique_id: "solar_panel_501000019070_4_grid_frequency"
+        value_template: '{{ value_json["501000019070-4"][1] }}'
+        unit_of_measurement: "Hz"
+      - name: "Solar Panel 501000019070 4 grid voltage"
+        unique_id: "solar_panel_501000019070_4_grid_voltage"
+        value_template: '{{ value_json["501000019070-4"][2] }}'
+        unit_of_measurement: "V"
+      - name: "Solar Panel 501000019070 4 temperature"
+        unique_id: "solar_panel_501000019070_4_temperature"
+        value_template: '{{ value_json["501000019070-4"][3] }}'
+        unit_of_measurement: "°C"
+
+  - resource: http://localhost:8123/local/power_data_ecu_copy.json
+    sensor:
+      - name: "Solar Lifetime Generation"
+        unique_id: "solar_lifetime_generation"
+        value_template: '{{ value_json["Lifetime generation"][0] }}'
+        unit_of_measurement: "kWh"
+        device_class: energy
+        state_class: total
+      - name: "Solar Generation Of Current Day"
+        unique_id: "solar_generation_of_current_day"
+        value_template: '{{ value_json["Generation Of Current Day"][0] }}'
+        unit_of_measurement: "kWh"
+        device_class: energy
+        state_class: total_increasing
+      - name: "Solar Generation Of Current Day1"
+        unique_id: "solar_generation_of_current_day1"
+        value_template: '{{ value_json["Generation Of Current Day"][0] }}'
+        unit_of_measurement: "kWh"
+      - name: "Number of Inverters"
+        unique_id: "solar_number_of_inverters"
+        value_template: '{{ value_json["Number of Inverters"][0] }}'
+        unit_of_measurement: "Aantal"
+      - name: "Last Number of Inverters Online"
+        unique_id: "solar_last_number_of_inverters_online"
+        value_template: '{{ value_json["Last Number of Inverters Online"][0] }}'
+        unit_of_measurement: "Aantal"

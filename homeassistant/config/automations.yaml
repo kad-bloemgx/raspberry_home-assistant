@@ -1,0 +1,40 @@
+- id: '1726212743510'
+  alias: convert_solar_data
+  description: ''
+  triggers:
+    - hours: '*'
+      minutes: '*'
+      trigger: time_pattern
+      seconds: /10
+  conditions:
+    - condition: sun
+      after: sunrise
+      before: sunset
+      enabled: false
+  actions:
+    - sequence:
+        - action: shell_command.convert_solar_data_ecu
+          data: {}
+        - delay:
+            hours: 0
+            minutes: 0
+            seconds: 5
+            milliseconds: 0
+        - action: shell_command.convert_solar_data_inverter
+          data: {}
+  mode: restart
+- id: '1726574283865'
+  alias: Solcast updates
+  description: ophalen van nieuwe inforamtie van solcast
+  trigger:
+    - platform: time_pattern
+      hours: /1
+  condition:
+    - condition: time
+      after: 08:00:00
+      before: '17:00:00'
+  action:
+    - action: solcast_solar.update_forecasts
+      metadata: {}
+      data: {}
+  mode: single
