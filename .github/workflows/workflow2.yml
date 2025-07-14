@@ -17,6 +17,7 @@ jobs:
         with:
           charts_dir: helm-charts
           pages_branch: github-pages
+          packages_with_index: true
         env:
           CR_TOKEN: "${{ secrets.GITHUB_TOKEN }}"
       - name: Setup Pages
