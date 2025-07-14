@@ -61,25 +61,25 @@ def exist_file_power_data(file):
 def value_generation_of_current_day_greater_or_equal(power_data, file):
     """Controleer of de opgeslagen waarde groter of gelijk is dan de gemeten waarde"""
 
-    x = power_data.get("Lifetime generation")
-    #print(x)
+    measured_lifetime_generation = power_data.get("Lifetime generation")
+
     if exist_file_power_data(file):
         with open(file) as json_data:
             d = json.load(json_data)
-        y = d['Lifetime generation']
-        #print(y)
-        if x >= y:
+        saved_lifetime_generation = d['Lifetime generation']
+
+        if measured_lifetime_generation >= saved_lifetime_generation:
             return True
         else:
             return False
     else:
         return True
 
-def save_power_data(power_data):
-    with open('./www/power_data_ecu.json', 'w+') as outfile:
+def save_power_data(power_data, file):
+    with open(file, 'w+') as outfile:
         json.dump(power_data, outfile, indent=5)
         outfile.close()
-        shutil.copy("./www/power_data_ecu.json","./www/power_data_ecu_copy.json")
+        shutil.copy(file,"./www/power_data_ecu_copy.json")
 
 def main():
     parser = argparse.ArgumentParser(description='Process and collect solar data.')
@@ -94,10 +94,9 @@ def main():
         power_data = parse_table(html_content)
         if power_data:
             if value_generation_of_current_day_greater_or_equal(power_data, './www/power_data_ecu.json'):
-                save_power_data(power_data)
+                save_power_data(power_data, './www/power_data_ecu.json')
             else:
-                print("fout")
-                exit()
+                save_power_data(power_data, './www/power_data_ecu_fout.json')
 
 if __name__ == "__main__":
     main()

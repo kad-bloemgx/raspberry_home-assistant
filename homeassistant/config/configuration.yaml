@@ -23,13 +23,6 @@ shell_command:
   convert_solar_data_ecu: python /config/python_scripts/ecu_html2json.py --url http://192.168.1.70/cgi-bin/home
 
 sensor:
-  #    HACS component tijdelijk uitgezet vanwege error meldingen
-  #  - platform: apsystems
-  #    authId: 2c9f934a8ae1809f018b00ed0f993808
-  #    systemId: 0b28481b630b364b0163281a400b3ae5
-  #    ecuId: 213000031723
-  #    sunset: off
-
   - platform: template
     sensors:
       solar_panels_total_power:

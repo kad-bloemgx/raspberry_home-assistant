@@ -4,10 +4,12 @@
 
 ### workflow_helm-chart.yml
 
-Na elke push wordt er een workflow gestart.
-- Create helm-chart
-- Make a version
-- Publish github.io
+Na elke push op de "master" wordt er een github workflow (workflow_helm-chart.yml) gestart.
+- build
+- release
+
+Indien er een wijziging is in de helm-charts wordt er een workflow (pages build and deployment) gestart.
+
 
 Opmerking: Indien nieuwe versie gewenst is pas "version:" aan in de Chart.yaml
 
@@ -25,7 +27,7 @@ Opmerking: Indien nieuwe versie gewenst is pas "version:" aan in de Chart.yaml
     
 ## homeassistant informatie
 
-## helm commands
+## handige helm commands
 
 
 - helm repo list
@@ -39,5 +41,5 @@ Opmerking: Indien nieuwe versie gewenst is pas "version:" aan in de Chart.yaml
 |----------------|-------------------------------------------|
 | appName        | homeassistant                             |
 | namespace      | homeassistant                             |
-| repository     | homeassistant/home-assistant tag "stable" |
+| repository     | homeassistant/home-assistant tag "2025.5" |
 | container.port | 8123                                      |
