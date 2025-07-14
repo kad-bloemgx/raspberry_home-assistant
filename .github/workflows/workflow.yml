@@ -25,6 +25,9 @@ jobs:
 
   # Deployment job
   deploy:
+    permissions:
+      id-token: write
+      pages: write
     env:
       CR_TOKEN: "${{ secrets.GITHUB_TOKEN }}"
     environment:
