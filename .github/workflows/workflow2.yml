@@ -2,7 +2,7 @@ name: workflow2.yml
 on:
   push:
     branches:
-      - main
+      - master
 permissions: write-all
 jobs:
   # Build job
