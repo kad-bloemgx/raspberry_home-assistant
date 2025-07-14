@@ -1,4 +1,4 @@
-#  raspberry_home-assistant 1
+#  raspberry_home-assistant
 
 ## How to build with github actions
 
