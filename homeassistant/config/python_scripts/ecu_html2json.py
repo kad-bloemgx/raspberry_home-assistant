@@ -79,7 +79,6 @@ def save_power_data(power_data, file):
     with open(file, 'w+') as outfile:
         json.dump(power_data, outfile, indent=5)
         outfile.close()
-        shutil.copy(file,"./www/power_data_ecu_copy.json")
 
 def main():
     parser = argparse.ArgumentParser(description='Process and collect solar data.')

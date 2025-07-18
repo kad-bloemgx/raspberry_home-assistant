@@ -58,7 +58,7 @@ sensor:
           ) | float * 0,001 }}
 
 rest:
-  - resource: http://localhost:8123/local/power_data_inverter_copy.json
+  - resource: http://localhost:8123/local/power_data_inverter.json
     sensor:
       - name: "Solar Panel 501000025147 1 power"
         unique_id: "solar_panel_501000025147_1_power"
@@ -445,7 +445,7 @@ rest:
         value_template: '{{ value_json["501000019070-4"][3] }}'
         unit_of_measurement: "°C"
 
-  - resource: http://localhost:8123/local/power_data_ecu_copy.json
+  - resource: http://localhost:8123/local/power_data_ecu.json
     sensor:
       - name: "Solar Lifetime Generation"
         unique_id: "solar_lifetime_generation"
