@@ -452,13 +452,11 @@ rest:
         value_template: '{{ value_json["Lifetime generation"][0] }}'
         unit_of_measurement: "kWh"
         device_class: energy
-        state_class: total
+        state_class: total_increasing
       - name: "Solar Generation Of Current Day"
         unique_id: "solar_generation_of_current_day"
         value_template: '{{ value_json["Generation Of Current Day"][0] }}'
         unit_of_measurement: "kWh"
-        device_class: energy
-        state_class: total_increasing
       - name: "Number of Inverters"
         unique_id: "solar_number_of_inverters"
         value_template: '{{ value_json["Number of Inverters"][0] }}'
