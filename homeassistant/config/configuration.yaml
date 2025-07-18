@@ -459,10 +459,6 @@ rest:
         unit_of_measurement: "kWh"
         device_class: energy
         state_class: total_increasing
-      - name: "Solar Generation Of Current Day1"
-        unique_id: "solar_generation_of_current_day1"
-        value_template: '{{ value_json["Generation Of Current Day"][0] }}'
-        unit_of_measurement: "kWh"
       - name: "Number of Inverters"
         unique_id: "solar_number_of_inverters"
         value_template: '{{ value_json["Number of Inverters"][0] }}'
