@@ -55,7 +55,7 @@ sensor:
              states('sensor.solar_panel_501000014054_3_power')|float(default=0) +
              states('sensor.solar_panel_501000019070_4_power')|float(default=0) +
              states('sensor.solar_panel_501000019070_3_power')|float(default=0)
-          ) | float * 0.001 }}
+          ) | float * 0,001 }}
 
 rest:
   - resource: http://localhost:8123/local/power_data_inverter_copy.json
