@@ -454,7 +454,7 @@ rest:
         device_class: energy
         state_class: total
       - name: "Solar Daily Generation"
-        unique_id: "solar_lifetime_generation"
+        unique_id: "solar_daily_generation"
         value_template: '{{ value_json["Lifetime generation"][0] }}'
         unit_of_measurement: "kWh"
         device_class: energy
