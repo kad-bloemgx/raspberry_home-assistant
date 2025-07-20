@@ -1,5 +1,6 @@
 default_config:
 automation: !include automations.yaml
+template: !include templates.yaml
 backup:
 energy:
 python_script:
@@ -22,12 +23,14 @@ shell_command:
   convert_solar_data_inverter: python /config/python_scripts/inverter_html2json.py --url http://192.168.1.70/cgi-bin/parameters
   convert_solar_data_ecu: python /config/python_scripts/ecu_html2json.py --url http://192.168.1.70/cgi-bin/home
 
-template:
-  - sensor:
-      - name: "solar_panels_total_power"
+sensor:
+  - platform: template
+    sensors:
+      solar_panels_total_power:
         unique_id: "total_solar_power"
+        friendly_name: "Total Solar Power"
         unit_of_measurement: "kW"
-        state: >
+        value_template: >
           {{ (
              states('sensor.solar_panel_501000014054_4_power')|float(default=0) +
              states('sensor.solar_panel_501000014191_1_power')|float(default=0) +
@@ -53,7 +56,7 @@ template:
              states('sensor.solar_panel_501000014054_3_power')|float(default=0) +
              states('sensor.solar_panel_501000019070_4_power')|float(default=0) +
              states('sensor.solar_panel_501000019070_3_power')|float(default=0)
-          ) | float * 0.001 }}
+          ) | float * 0,001 }}
 
 
 rest:
@@ -470,9 +473,3 @@ rest:
         unique_id: "solar_last_number_of_inverters_online"
         value_template: '{{ value_json["Last Number of Inverters Online"][0] }}'
         unit_of_measurement: "Aantal"
-
-utility_meter:
-    daily_energy:
-      source: sensor.solar_lifetime_generation
-      name: Solar Daily Energy
-      cycle: daily

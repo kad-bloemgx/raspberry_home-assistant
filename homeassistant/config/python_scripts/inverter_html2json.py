@@ -56,7 +56,6 @@ def save_power_data(power_data):
     with open('./www/power_data_inverter.json', 'w+') as outfile:
         json.dump(power_data, outfile, indent=4)
         outfile.close()
-        shutil.copy("./www/power_data_inverter.json","./www/power_data_inverter_copy.json")
 
 
 def main():
