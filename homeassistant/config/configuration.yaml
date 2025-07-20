@@ -474,5 +474,5 @@ rest:
 utility_meter:
     daily_energy:
       source: sensor.solar_lifetime_generation
-      name: Solar Daily generation
+      name: Solar Daily Energy
       cycle: daily
