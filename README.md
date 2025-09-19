@@ -90,3 +90,4 @@ Het script wordt uitgevoerd vanaf de command-line en vereist ofwel een lokaal HT
 -   **`power_data_ecu_fout.json`**: Wordt aangemaakt als de validatie mislukt (bijv. `Lifetime generation` is lager dan voorheen). Dit bestand is bedoeld voor inspectie.
 
 
+hij doet het
