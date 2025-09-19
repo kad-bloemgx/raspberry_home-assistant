@@ -16,16 +16,19 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
+      - name: Run chart-releaser
+        uses: helm/chart-releaser-action@v1.7.0
+        with:
+         charts_dir: helm-charts
+         pages_branch: github-pages
+         packages_with_index: true
       - name: Setup Pages
         uses: actions/configure-pages@v5
       - name: Build Pages
         uses:  actions/jekyll-build-pages@v1
-        with:
-          destination: "./output"
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
-        with:
-          path: "./output"
+
   release:
     needs: build
     permissions:
@@ -41,13 +44,7 @@ jobs:
           git config user.name "$GITHUB_ACTOR"
           git config user.email "$GITHUB_ACTOR@users.noreply.github.com"
           echo $GITHUB_ACTOR
-      - name: Run chart-releaser
-        uses: helm/chart-releaser-action@v1.7.0
-        with:
-          charts_dir: helm-charts
-          packages_with_index: true
-        env:
-          CR_TOKEN: "${{ secrets.GITHUB_TOKEN }}"
+
   deploy:
     needs: release
     runs-on: ubuntu-latest
