@@ -11,7 +11,8 @@ permissions: write-all
 # Job    Event push on the main branch
 jobs:
   build:
-    # Choosing the runner (GitHub hosted runner)
+    permissions:
+      contents: write
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
