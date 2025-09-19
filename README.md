@@ -37,6 +37,7 @@ Opmerking: Indien nieuwe versie gewenst is pas "version:" aan in de Chart.yaml
 - helm install home-assistant raspberry_home-assistant/raspberry_home-assistant
 
 
+
 | key            | Value                                     |
 |----------------|-------------------------------------------|
 | appName        | homeassistant                             |
