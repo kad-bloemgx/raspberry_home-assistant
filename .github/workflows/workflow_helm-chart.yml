@@ -20,7 +20,7 @@ jobs:
         uses: helm/chart-releaser-action@v1.7.0
         with:
          charts_dir: helm-charts
-         pages_branch: github-pages
+         pages_branch: gh-pages
          packages_with_index: true
         env:
          CR_TOKEN: "${{ secrets.GITHUB_TOKEN }}"
@@ -51,7 +51,7 @@ jobs:
     needs: release
     runs-on: ubuntu-latest
     environment:
-      name: github-pages
+      name: gh-pages
       url: ${{steps.deployment.outputs.page_url}}
     steps:
       - name: Deploy to GitHub Pages
