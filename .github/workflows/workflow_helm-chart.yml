@@ -48,13 +48,13 @@ jobs:
           packages_with_index: true
         env:
           CR_TOKEN: "${{ secrets.GITHUB_TOKEN }}"
-#  deploy:
-#    needs: release
-#    runs-on: ubuntu-latest
-#    environment:
-#      name: github-pages
-#      url: ${{steps.deployment.outputs.page_url}}
-#    steps:
-#      - name: Deploy to GitHub Pages
-#        id: deployment
-#        uses: actions/deploy-pages@v4
+  deploy:
+    needs: release
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{steps.deployment.outputs.page_url}}
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
