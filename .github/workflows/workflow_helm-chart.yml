@@ -22,6 +22,8 @@ jobs:
          charts_dir: helm-charts
          pages_branch: github-pages
          packages_with_index: true
+        env:
+         CR_TOKEN: "${{ secrets.GITHUB_TOKEN }}"
       - name: Setup Pages
         uses: actions/configure-pages@v5
       - name: Build Pages
