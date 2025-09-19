@@ -476,3 +476,6 @@ utility_meter:
       source: sensor.solar_lifetime_generation
       name: Solar Daily Energy
       cycle: daily
+    total_energy:
+      source: sensor.solar_lifetime_generation
+      name: Solar Total Energy
