@@ -60,6 +60,11 @@ jobs:
       name: github-pages
       url: ${{steps.deployment.outputs.page_url}}
     steps:
+      - name: Configure Git
+        run: |
+         git config user.name "$GITHUB_ACTOR"
+         git config user.email "$GITHUB_ACTOR@users.noreply.github.com"
+         echo $GITHUB_ACTOR
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
