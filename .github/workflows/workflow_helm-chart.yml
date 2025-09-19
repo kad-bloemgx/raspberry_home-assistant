@@ -51,11 +51,7 @@ jobs:
 
   deploy:
     needs: release
-    permissions:
-      pages: read
     runs-on: ubuntu-latest
-    env:
-      CR_TOKEN: "${{ secrets.GITHUB_TOKEN }}"
     environment:
       name: github-pages
       url: ${{steps.deployment.outputs.page_url}}
