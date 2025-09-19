@@ -50,13 +50,15 @@ jobs:
           CR_TOKEN: "${{ secrets.GITHUB_TOKEN }}"
 
   deploy:
+    needs: release
+    permissions:
+      pages: write
+    runs-on: ubuntu-latest
     env:
       CR_TOKEN: "${{ secrets.GITHUB_TOKEN }}"
     environment:
       name: github-pages
       url: ${{steps.deployment.outputs.page_url}}
-    runs-on: ubuntu-latest
-    needs: release
     steps:
       - name: Deploy to GitHub Pages
         id: deployment
