@@ -40,6 +40,8 @@ jobs:
 #          github_token: ${{ secrets.GITHUB_TOKEN }}
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v4
+        with:
+          path: ./site
   deploy:
     needs: release
     runs-on: ubuntu-latest
