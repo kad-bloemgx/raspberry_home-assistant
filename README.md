@@ -4,31 +4,31 @@
 
 ### workflow_helm-chart.yml
 
-Na elke push op de "master" wordt er een github workflow (workflow_helm-chart.yml) gestart.
-- build
+Na elke push op de "master" wordt er een github workflow (workflow_helm-chart.yml) gestart. Zie hieronder de stappen in de release.
+
 - release
-
-Indien er een wijziging is in de helm-charts wordt er een workflow (pages build and deployment) gestart.
-
-
-Opmerking: Indien nieuwe versie gewenst is pas "version:" aan in de Chart.yaml
+  - Checkout
+  - Run chart-releaser
+  - Merge master --> gh-pages
 
 
-#### Achtergrondinformatie
-1. https://www.youtube.com/watch?v=x4IF7yyWw9g
-2. https://github.com/devops4solutions/springboot-helm-chart/tree/main
-
-#### github pages
-
+Na de merge in gh-pages wordt er een action gestart die de gh-pages publiceerd onder de URI:
 
 1. [repo](https://kad-bloemgx.github.io/raspberry_home-assistant/)
 2. [repo index](https://kad-bloemgx.github.io/raspberry_home-assistant/index.yaml)
 
 
-## homeassistant informatie
+### Achtergrondinformatie
 
-## handige helm commands
+1. https://www.youtube.com/watch?v=x4IF7yyWw9g
+2. https://github.com/devops4solutions/springboot-helm-chart/tree/main
 
+
+
+
+## Homeassistant informatie
+
+## Handige helm commands
 
 - helm repo list
 - helm repo add raspberry_home-assistant https://kad-bloemgx.github.io/raspberry_home-assistant
@@ -37,6 +37,7 @@ Opmerking: Indien nieuwe versie gewenst is pas "version:" aan in de Chart.yaml
 - helm install home-assistant raspberry_home-assistant/raspberry_home-assistant
 
 
+## values.yaml
 
 | key            | Value                                     |
 |----------------|-------------------------------------------|
@@ -45,7 +46,7 @@ Opmerking: Indien nieuwe versie gewenst is pas "version:" aan in de Chart.yaml
 | repository     | homeassistant/home-assistant tag "2025.5" |
 | container.port | 8123                                      |
 
-### ecu_html2json.py
+## Python script ecu_html2json.py
 
 Dit Python-script is ontworpen om data te extraheren uit een HTML-pagina van een ECU (Energy Communication Unit) van een zonnepaneelsysteem. Het script leest een HTML-tabel, verwerkt de data, en slaat deze op in een JSON-bestand.
 
