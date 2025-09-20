@@ -37,6 +37,7 @@ Opmerking: Indien nieuwe versie gewenst is pas "version:" aan in de Chart.yaml
 - helm install home-assistant raspberry_home-assistant/raspberry_home-assistant
 
 
+
 | key            | Value                                     |
 |----------------|-------------------------------------------|
 | appName        | homeassistant                             |
@@ -85,6 +86,7 @@ Het script wordt uitgevoerd vanaf de command-line en vereist ofwel een lokaal HT
     ```
 
 #### Output
+het werkt
 
 -   **`power_data_ecu.json`**: Bevat de meest recente, succesvol gevalideerde data.
 -   **`power_data_ecu_fout.json`**: Wordt aangemaakt als de validatie mislukt (bijv. `Lifetime generation` is lager dan voorheen). Dit bestand is bedoeld voor inspectie.
