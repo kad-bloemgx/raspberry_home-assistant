@@ -32,23 +32,9 @@ jobs:
           charts_dir: helm-charts
         env:
           CR_TOKEN: "${{ secrets.GITHUB_TOKEN }}"
-#      - name: Merge master --> gh-pages
-#        uses: devmasx/merge-branch@master
-#        with:
-#          type: now
-#          target_branch: gh-pages
-#          github_token: ${{ secrets.GITHUB_TOKEN }}
-      - name: Upload artifact
-        uses: actions/upload-pages-artifact@v4
+      - name: Merge master --> gh-pages
+        uses: devmasx/merge-branch@master
         with:
-          path: ./site
-  deploy:
-    needs: release
-    runs-on: ubuntu-latest
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
-    steps:
-        - name: Deploy to GitHub Pages
-          id: deployment
-          uses: actions/deploy-pages@v4
+          type: now
+          target_branch: gh-pages
+          github_token: ${{ secrets.GITHUB_TOKEN }}
