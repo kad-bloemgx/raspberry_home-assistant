@@ -26,7 +26,7 @@
 ## homeassistant
 
 
-| key            | Value                                     |
+| key            | Value                                    |
 |----------------|-------------------------------------------|
 | appName        | homeassistant                             |
 | namespace      | homeassistant                             |
