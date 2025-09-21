@@ -9,21 +9,22 @@ Na elke push op de "master" wordt er een github workflow (workflow_helm-chart.ym
 - release
   - Checkout
   - Run chart-releaser
-  - Merge master --> gh-pages
 
+**note:** er wordt alleen een nieuwe versie gepubliceerd op het moment dat er een nieuwere versie in de Chart.yaml (version: 1.3.5) is.
 
-Na de merge in gh-pages wordt er een action gestart die de gh-pages publiceerd onder de URI:
+### github pages
+
+GitHub pages wordt gebruikt om de artifacts te publiceren. Hieronder vind je de repo en de repo index.yaml
 
 1. [repo](https://kad-bloemgx.github.io/raspberry_home-assistant/)
 2. [repo index](https://kad-bloemgx.github.io/raspberry_home-assistant/index.yaml)
 
+De branch gh-pages wordt gebruikt voor het genereren van de index.yaml
 
 ### Achtergrondinformatie
 
 1. https://www.youtube.com/watch?v=x4IF7yyWw9g
 2. https://github.com/devops4solutions/springboot-helm-chart/tree/main
-
-
 
 
 ## Homeassistant informatie
