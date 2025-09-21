@@ -1,0 +1,586 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="31039923-1374-4926-b22e-b401e65232e3" name="Changes" comment="divers">
+      <change beforePath="$PROJECT_DIR$/.github/workflows/workflow_helm-chart.yml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/helm-charts/home-assistant/.helmignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/helm-charts/home-assistant/Chart.yaml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/helm-charts/home-assistant/templates/deployment.yaml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/helm-charts/home-assistant/templates/ingressroute.yaml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/helm-charts/home-assistant/templates/namespace.yaml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/helm-charts/home-assistant/templates/pvc.yaml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/helm-charts/home-assistant/templates/service-coiot.yaml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/helm-charts/home-assistant/templates/service.yaml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/helm-charts/home-assistant/values.yaml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/helm-charts/openvpn/.helmignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/helm-charts/openvpn/Chart.yaml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/helm-charts/openvpn/templates/deployment.yaml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/helm-charts/openvpn/templates/ingressroute.yaml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/helm-charts/openvpn/templates/namespace.yaml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/helm-charts/openvpn/templates/service.yaml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/helm-charts/openvpn/values.yaml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/helm-charts/traefik/.helmignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/helm-charts/traefik/Chart.yaml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/helm-charts/traefik/templates/deployment.yaml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/helm-charts/traefik/templates/service.yaml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/helm-charts/traefik/templates/serviceaccount.yaml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/helm-charts/traefik/values.yaml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/homeassistant/config/automations.yaml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/homeassistant/config/configuration.yaml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/homeassistant/config/configuration2.yaml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/homeassistant/config/python_scripts/ecu_html2json.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/homeassistant/config/python_scripts/inverter_html2json.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/homeassistant/config/requirements.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/homeassistant/config/scenes.yaml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/homeassistant/config/scripts.yaml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/homeassistant/config/secrets.yaml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/homeassistant/config/templates.yaml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/homeassistant/config/ui.lovelace.yaml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/index.yaml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/raspberry_home-assistant.iml" beforeDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="workflow" />
+        <option value="GitHub Workflow" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="master" />
+      </map>
+    </option>
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;kad-bloemgx&quot;
+  }
+}</component>
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/kad-bloemgx/raspberry_home-assistant.git&quot;,
+    &quot;accountId&quot;: &quot;7708d818-e959-4749-aac8-8f4e191845d9&quot;
+  }
+}</component>
+  <component name="KubernetesApiPersistence">{}</component>
+  <component name="KubernetesApiProvider">{
+  &quot;isMigrated&quot;: true
+}</component>
+  <component name="KubernetesSettings">
+    <option name="helmParameters">
+      <HelmParameters>
+        <option name="valuesFiles">
+          <option value="values.yaml" />
+        </option>
+      </HelmParameters>
+      <HelmParameters>
+        <option name="valuesFiles">
+          <option value="values.yaml" />
+        </option>
+      </HelmParameters>
+    </option>
+  </component>
+  <component name="ProblemsViewState">
+    <option name="selectedTabId" value="CurrentFile" />
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;customColor&quot;: &quot;&quot;,
+  &quot;associatedIndex&quot;: 3
+}</component>
+  <component name="ProjectId" id="2zgi8GOJxo3fBR0B6EuMgiW4yx4" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "KUBERNETES_SUPPRESS_CONFIG_CLUSTER_SUGGESTION": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "git-widget-placeholder": "gh-pages",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "/home/gerardb/IdeaProjects/raspberry_home-assistant/helm-charts/openvpn/templates",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "settings.editor.selected.configurable": "preferences.pluginManager",
+    "vue.rearranger.settings.migration": "true"
+  }
+}]]></component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/helm-charts/openvpn/templates" />
+      <recent name="$PROJECT_DIR$/homeassistant/config" />
+    </key>
+  </component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-jdk-9823dce3aa75-bf35d07a577b-intellij.indexing.shared.core-IU-252.25557.131" />
+        <option value="bundled-js-predefined-d6986cc7102b-b598e85cdad2-JavaScript-IU-252.25557.131" />
+      </set>
+    </attachedChunks>
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="31039923-1374-4926-b22e-b401e65232e3" name="Changes" comment="" />
+      <created>1752158960113</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1752158960113</updated>
+      <workItem from="1752158962063" duration="11000" />
+      <workItem from="1752158978115" duration="2170000" />
+      <workItem from="1752217051040" duration="1466000" />
+      <workItem from="1752228604490" duration="7986000" />
+      <workItem from="1752245441988" duration="2738000" />
+      <workItem from="1752489738891" duration="12457000" />
+      <workItem from="1752824147288" duration="10881000" />
+      <workItem from="1752993811265" duration="3047000" />
+      <workItem from="1754565391001" duration="2292000" />
+      <workItem from="1754905893986" duration="75000" />
+      <workItem from="1754905996040" duration="2026000" />
+      <workItem from="1754915153102" duration="2162000" />
+      <workItem from="1754981054877" duration="3030000" />
+      <workItem from="1755157370092" duration="2796000" />
+      <workItem from="1755588689161" duration="2454000" />
+      <workItem from="1755609838147" duration="707000" />
+      <workItem from="1755759070022" duration="4000" />
+      <workItem from="1755777113190" duration="1902000" />
+      <workItem from="1756369027196" duration="586000" />
+      <workItem from="1756369663699" duration="2580000" />
+      <workItem from="1756815339960" duration="2035000" />
+      <workItem from="1757061749890" duration="1641000" />
+      <workItem from="1757421845637" duration="666000" />
+      <workItem from="1758268636624" duration="17146000" />
+      <workItem from="1758373642382" duration="3857000" />
+      <workItem from="1758384075154" duration="2001000" />
+      <workItem from="1758464430388" duration="1501000" />
+    </task>
+    <task id="LOCAL-00061" summary="divers">
+      <option name="closed" value="true" />
+      <created>1758280797058</created>
+      <option name="number" value="00061" />
+      <option name="presentableId" value="LOCAL-00061" />
+      <option name="project" value="LOCAL" />
+      <updated>1758280797058</updated>
+    </task>
+    <task id="LOCAL-00062" summary="divers">
+      <option name="closed" value="true" />
+      <created>1758280837254</created>
+      <option name="number" value="00062" />
+      <option name="presentableId" value="LOCAL-00062" />
+      <option name="project" value="LOCAL" />
+      <updated>1758280837254</updated>
+    </task>
+    <task id="LOCAL-00063" summary="divers">
+      <option name="closed" value="true" />
+      <created>1758281352564</created>
+      <option name="number" value="00063" />
+      <option name="presentableId" value="LOCAL-00063" />
+      <option name="project" value="LOCAL" />
+      <updated>1758281352564</updated>
+    </task>
+    <task id="LOCAL-00064" summary="divers">
+      <option name="closed" value="true" />
+      <created>1758281615180</created>
+      <option name="number" value="00064" />
+      <option name="presentableId" value="LOCAL-00064" />
+      <option name="project" value="LOCAL" />
+      <updated>1758281615180</updated>
+    </task>
+    <task id="LOCAL-00065" summary="divers">
+      <option name="closed" value="true" />
+      <created>1758281838199</created>
+      <option name="number" value="00065" />
+      <option name="presentableId" value="LOCAL-00065" />
+      <option name="project" value="LOCAL" />
+      <updated>1758281838199</updated>
+    </task>
+    <task id="LOCAL-00066" summary="divers">
+      <option name="closed" value="true" />
+      <created>1758282037438</created>
+      <option name="number" value="00066" />
+      <option name="presentableId" value="LOCAL-00066" />
+      <option name="project" value="LOCAL" />
+      <updated>1758282037438</updated>
+    </task>
+    <task id="LOCAL-00067" summary="divers">
+      <option name="closed" value="true" />
+      <created>1758283020752</created>
+      <option name="number" value="00067" />
+      <option name="presentableId" value="LOCAL-00067" />
+      <option name="project" value="LOCAL" />
+      <updated>1758283020752</updated>
+    </task>
+    <task id="LOCAL-00068" summary="divers">
+      <option name="closed" value="true" />
+      <created>1758283407371</created>
+      <option name="number" value="00068" />
+      <option name="presentableId" value="LOCAL-00068" />
+      <option name="project" value="LOCAL" />
+      <updated>1758283407371</updated>
+    </task>
+    <task id="LOCAL-00069" summary="divers">
+      <option name="closed" value="true" />
+      <created>1758283652679</created>
+      <option name="number" value="00069" />
+      <option name="presentableId" value="LOCAL-00069" />
+      <option name="project" value="LOCAL" />
+      <updated>1758283652679</updated>
+    </task>
+    <task id="LOCAL-00070" summary="divers">
+      <option name="closed" value="true" />
+      <created>1758283801166</created>
+      <option name="number" value="00070" />
+      <option name="presentableId" value="LOCAL-00070" />
+      <option name="project" value="LOCAL" />
+      <updated>1758283801167</updated>
+    </task>
+    <task id="LOCAL-00071" summary="divers">
+      <option name="closed" value="true" />
+      <created>1758283929223</created>
+      <option name="number" value="00071" />
+      <option name="presentableId" value="LOCAL-00071" />
+      <option name="project" value="LOCAL" />
+      <updated>1758283929223</updated>
+    </task>
+    <task id="LOCAL-00072" summary="divers">
+      <option name="closed" value="true" />
+      <created>1758284058611</created>
+      <option name="number" value="00072" />
+      <option name="presentableId" value="LOCAL-00072" />
+      <option name="project" value="LOCAL" />
+      <updated>1758284058611</updated>
+    </task>
+    <task id="LOCAL-00073" summary="divers">
+      <option name="closed" value="true" />
+      <created>1758284212254</created>
+      <option name="number" value="00073" />
+      <option name="presentableId" value="LOCAL-00073" />
+      <option name="project" value="LOCAL" />
+      <updated>1758284212254</updated>
+    </task>
+    <task id="LOCAL-00074" summary="divers">
+      <option name="closed" value="true" />
+      <created>1758284332311</created>
+      <option name="number" value="00074" />
+      <option name="presentableId" value="LOCAL-00074" />
+      <option name="project" value="LOCAL" />
+      <updated>1758284332311</updated>
+    </task>
+    <task id="LOCAL-00075" summary="divers">
+      <option name="closed" value="true" />
+      <created>1758284662807</created>
+      <option name="number" value="00075" />
+      <option name="presentableId" value="LOCAL-00075" />
+      <option name="project" value="LOCAL" />
+      <updated>1758284662807</updated>
+    </task>
+    <task id="LOCAL-00076" summary="divers">
+      <option name="closed" value="true" />
+      <created>1758284750965</created>
+      <option name="number" value="00076" />
+      <option name="presentableId" value="LOCAL-00076" />
+      <option name="project" value="LOCAL" />
+      <updated>1758284750965</updated>
+    </task>
+    <task id="LOCAL-00077" summary="divers">
+      <option name="closed" value="true" />
+      <created>1758284833338</created>
+      <option name="number" value="00077" />
+      <option name="presentableId" value="LOCAL-00077" />
+      <option name="project" value="LOCAL" />
+      <updated>1758284833339</updated>
+    </task>
+    <task id="LOCAL-00078" summary="divers">
+      <option name="closed" value="true" />
+      <created>1758285086207</created>
+      <option name="number" value="00078" />
+      <option name="presentableId" value="LOCAL-00078" />
+      <option name="project" value="LOCAL" />
+      <updated>1758285086207</updated>
+    </task>
+    <task id="LOCAL-00079" summary="divers">
+      <option name="closed" value="true" />
+      <created>1758285348425</created>
+      <option name="number" value="00079" />
+      <option name="presentableId" value="LOCAL-00079" />
+      <option name="project" value="LOCAL" />
+      <updated>1758285348425</updated>
+    </task>
+    <task id="LOCAL-00080" summary="divers">
+      <option name="closed" value="true" />
+      <created>1758288472929</created>
+      <option name="number" value="00080" />
+      <option name="presentableId" value="LOCAL-00080" />
+      <option name="project" value="LOCAL" />
+      <updated>1758288472929</updated>
+    </task>
+    <task id="LOCAL-00081" summary="divers">
+      <option name="closed" value="true" />
+      <created>1758374093003</created>
+      <option name="number" value="00081" />
+      <option name="presentableId" value="LOCAL-00081" />
+      <option name="project" value="LOCAL" />
+      <updated>1758374093003</updated>
+    </task>
+    <task id="LOCAL-00082" summary="divers">
+      <option name="closed" value="true" />
+      <created>1758374825673</created>
+      <option name="number" value="00082" />
+      <option name="presentableId" value="LOCAL-00082" />
+      <option name="project" value="LOCAL" />
+      <updated>1758374825673</updated>
+    </task>
+    <task id="LOCAL-00083" summary="divers">
+      <option name="closed" value="true" />
+      <created>1758374874561</created>
+      <option name="number" value="00083" />
+      <option name="presentableId" value="LOCAL-00083" />
+      <option name="project" value="LOCAL" />
+      <updated>1758374874561</updated>
+    </task>
+    <task id="LOCAL-00084" summary="divers">
+      <option name="closed" value="true" />
+      <created>1758375576689</created>
+      <option name="number" value="00084" />
+      <option name="presentableId" value="LOCAL-00084" />
+      <option name="project" value="LOCAL" />
+      <updated>1758375576689</updated>
+    </task>
+    <task id="LOCAL-00085" summary="divers">
+      <option name="closed" value="true" />
+      <created>1758375699676</created>
+      <option name="number" value="00085" />
+      <option name="presentableId" value="LOCAL-00085" />
+      <option name="project" value="LOCAL" />
+      <updated>1758375699676</updated>
+    </task>
+    <task id="LOCAL-00086" summary="divers">
+      <option name="closed" value="true" />
+      <created>1758375897360</created>
+      <option name="number" value="00086" />
+      <option name="presentableId" value="LOCAL-00086" />
+      <option name="project" value="LOCAL" />
+      <updated>1758375897360</updated>
+    </task>
+    <task id="LOCAL-00087" summary="divers">
+      <option name="closed" value="true" />
+      <created>1758375940395</created>
+      <option name="number" value="00087" />
+      <option name="presentableId" value="LOCAL-00087" />
+      <option name="project" value="LOCAL" />
+      <updated>1758375940395</updated>
+    </task>
+    <task id="LOCAL-00088" summary="divers">
+      <option name="closed" value="true" />
+      <created>1758376038203</created>
+      <option name="number" value="00088" />
+      <option name="presentableId" value="LOCAL-00088" />
+      <option name="project" value="LOCAL" />
+      <updated>1758376038203</updated>
+    </task>
+    <task id="LOCAL-00089" summary="divers">
+      <option name="closed" value="true" />
+      <created>1758376134432</created>
+      <option name="number" value="00089" />
+      <option name="presentableId" value="LOCAL-00089" />
+      <option name="project" value="LOCAL" />
+      <updated>1758376134432</updated>
+    </task>
+    <task id="LOCAL-00090" summary="divers">
+      <option name="closed" value="true" />
+      <created>1758376178262</created>
+      <option name="number" value="00090" />
+      <option name="presentableId" value="LOCAL-00090" />
+      <option name="project" value="LOCAL" />
+      <updated>1758376178262</updated>
+    </task>
+    <task id="LOCAL-00091" summary="divers">
+      <option name="closed" value="true" />
+      <created>1758376240819</created>
+      <option name="number" value="00091" />
+      <option name="presentableId" value="LOCAL-00091" />
+      <option name="project" value="LOCAL" />
+      <updated>1758376240819</updated>
+    </task>
+    <task id="LOCAL-00092" summary="divers">
+      <option name="closed" value="true" />
+      <created>1758376350815</created>
+      <option name="number" value="00092" />
+      <option name="presentableId" value="LOCAL-00092" />
+      <option name="project" value="LOCAL" />
+      <updated>1758376350815</updated>
+    </task>
+    <task id="LOCAL-00093" summary="divers">
+      <option name="closed" value="true" />
+      <created>1758376581396</created>
+      <option name="number" value="00093" />
+      <option name="presentableId" value="LOCAL-00093" />
+      <option name="project" value="LOCAL" />
+      <updated>1758376581396</updated>
+    </task>
+    <task id="LOCAL-00094" summary="divers">
+      <option name="closed" value="true" />
+      <created>1758376755966</created>
+      <option name="number" value="00094" />
+      <option name="presentableId" value="LOCAL-00094" />
+      <option name="project" value="LOCAL" />
+      <updated>1758376755966</updated>
+    </task>
+    <task id="LOCAL-00095" summary="divers">
+      <option name="closed" value="true" />
+      <created>1758376846962</created>
+      <option name="number" value="00095" />
+      <option name="presentableId" value="LOCAL-00095" />
+      <option name="project" value="LOCAL" />
+      <updated>1758376846962</updated>
+    </task>
+    <task id="LOCAL-00096" summary="divers">
+      <option name="closed" value="true" />
+      <created>1758385315285</created>
+      <option name="number" value="00096" />
+      <option name="presentableId" value="LOCAL-00096" />
+      <option name="project" value="LOCAL" />
+      <updated>1758385315285</updated>
+    </task>
+    <task id="LOCAL-00097" summary="divers">
+      <option name="closed" value="true" />
+      <created>1758385550440</created>
+      <option name="number" value="00097" />
+      <option name="presentableId" value="LOCAL-00097" />
+      <option name="project" value="LOCAL" />
+      <updated>1758385550440</updated>
+    </task>
+    <task id="LOCAL-00098" summary="divers">
+      <option name="closed" value="true" />
+      <created>1758385761901</created>
+      <option name="number" value="00098" />
+      <option name="presentableId" value="LOCAL-00098" />
+      <option name="project" value="LOCAL" />
+      <updated>1758385761901</updated>
+    </task>
+    <task id="LOCAL-00099" summary="divers">
+      <option name="closed" value="true" />
+      <created>1758385906403</created>
+      <option name="number" value="00099" />
+      <option name="presentableId" value="LOCAL-00099" />
+      <option name="project" value="LOCAL" />
+      <updated>1758385906403</updated>
+    </task>
+    <task id="LOCAL-00100" summary="divers">
+      <option name="closed" value="true" />
+      <created>1758464561787</created>
+      <option name="number" value="00100" />
+      <option name="presentableId" value="LOCAL-00100" />
+      <option name="project" value="LOCAL" />
+      <updated>1758464561787</updated>
+    </task>
+    <task id="LOCAL-00101" summary="divers">
+      <option name="closed" value="true" />
+      <created>1758464653557</created>
+      <option name="number" value="00101" />
+      <option name="presentableId" value="LOCAL-00101" />
+      <option name="project" value="LOCAL" />
+      <updated>1758464653557</updated>
+    </task>
+    <task id="LOCAL-00102" summary="divers">
+      <option name="closed" value="true" />
+      <created>1758464706292</created>
+      <option name="number" value="00102" />
+      <option name="presentableId" value="LOCAL-00102" />
+      <option name="project" value="LOCAL" />
+      <updated>1758464706292</updated>
+    </task>
+    <task id="LOCAL-00103" summary="divers">
+      <option name="closed" value="true" />
+      <created>1758464759387</created>
+      <option name="number" value="00103" />
+      <option name="presentableId" value="LOCAL-00103" />
+      <option name="project" value="LOCAL" />
+      <updated>1758464759387</updated>
+    </task>
+    <task id="LOCAL-00104" summary="divers">
+      <option name="closed" value="true" />
+      <created>1758464834620</created>
+      <option name="number" value="00104" />
+      <option name="presentableId" value="LOCAL-00104" />
+      <option name="project" value="LOCAL" />
+      <updated>1758464834620</updated>
+    </task>
+    <task id="LOCAL-00105" summary="divers">
+      <option name="closed" value="true" />
+      <created>1758464893959</created>
+      <option name="number" value="00105" />
+      <option name="presentableId" value="LOCAL-00105" />
+      <option name="project" value="LOCAL" />
+      <updated>1758464893959</updated>
+    </task>
+    <task id="LOCAL-00106" summary="divers">
+      <option name="closed" value="true" />
+      <created>1758465001833</created>
+      <option name="number" value="00106" />
+      <option name="presentableId" value="LOCAL-00106" />
+      <option name="project" value="LOCAL" />
+      <updated>1758465001833</updated>
+    </task>
+    <task id="LOCAL-00107" summary="divers">
+      <option name="closed" value="true" />
+      <created>1758465444015</created>
+      <option name="number" value="00107" />
+      <option name="presentableId" value="LOCAL-00107" />
+      <option name="project" value="LOCAL" />
+      <updated>1758465444015</updated>
+    </task>
+    <task id="LOCAL-00108" summary="divers">
+      <option name="closed" value="true" />
+      <created>1758465506095</created>
+      <option name="number" value="00108" />
+      <option name="presentableId" value="LOCAL-00108" />
+      <option name="project" value="LOCAL" />
+      <updated>1758465506095</updated>
+    </task>
+    <task id="LOCAL-00109" summary="divers">
+      <option name="closed" value="true" />
+      <created>1758465787222</created>
+      <option name="number" value="00109" />
+      <option name="presentableId" value="LOCAL-00109" />
+      <option name="project" value="LOCAL" />
+      <updated>1758465787222</updated>
+    </task>
+    <option name="localTasksCounter" value="110" />
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="divers" />
+    <option name="LAST_COMMIT_MESSAGE" value="divers" />
+  </component>
+  <component name="XSLT-Support.FileAssociations.UIState">
+    <expand />
+    <select />
+  </component>
+</project>
