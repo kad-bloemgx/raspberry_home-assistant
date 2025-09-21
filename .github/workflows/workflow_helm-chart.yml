@@ -21,9 +21,9 @@ jobs:
           charts_dir: helm-charts
         env:
           CR_TOKEN: "${{ secrets.GITHUB_TOKEN }}"
-      - name: Merge master --> gh-pages
-        uses: devmasx/merge-branch@master
-        with:
-          type: now
-          target_branch: gh-pages
-          github_token: ${{ secrets.GITHUB_TOKEN }}
+#      - name: Merge master --> gh-pages
+#        uses: devmasx/merge-branch@master
+#        with:
+#          type: now
+#          target_branch: gh-pages
+#          github_token: ${{ secrets.GITHUB_TOKEN }}
