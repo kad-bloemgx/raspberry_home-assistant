@@ -1,5 +1,6 @@
 kind: PersistentVolumeClaim
 apiVersion: v1
+
 metadata:
   name: local-path-pvc
   namespace: {{ .Values.nameSpace }}
