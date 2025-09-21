@@ -91,3 +91,4 @@ het werkt
 
 -   **`power_data_ecu.json`**: Bevat de meest recente, succesvol gevalideerde data.
 -   **`power_data_ecu_fout.json`**: Wordt aangemaakt als de validatie mislukt (bijv. `Lifetime generation` is lager dan voorheen). Dit bestand is bedoeld voor inspectie.
+test
