@@ -66,12 +66,12 @@ Het script wordt uitgevoerd vanaf de command-line en vereist ofwel een lokaal HT
 
 **Argumenten:**
 
-| Argument        | Beschrijving                                                                     | Vereist |
-|-----------------|----------------------------------------------------------------------------------|:-------:|
-| `--file`        | Pad naar een lokaal HTML-bestand.                                                |   Ja*   |
-| `--url`         | URL van de ECU-webpagina.                                                        |   Ja*   |
-| `--output-file` | Pad voor het output JSON-bestand (standaard: `./www/power_data_ecu.json`).       |  Nee    |
-| `--error-file`  | Pad voor het JSON-bestand bij een validatiefout (standaard: `./www/power_data_ecu_fout.json`). |  Nee    |
+| Argument        | Beschrijving                                                                                   | Vereist |
+|-----------------|------------------------------------------------------------------------------------------------|:-------:|
+| `--file`        | Pad naar een lokaal HTML-bestand.                                                              |   Ja*   |
+| `--url`         | URL van de ECU-webpagina.                                                                      |   Ja*   |
+| `--output-file` | Pad voor het output JSON-bestand (standaard: `./www/power_data_ecu.json`).                     |   Nee   |
+| `--error-file`  | Pad voor het JSON-bestand bij een validatiefout (standaard: `./www/power_data_ecu_fout.json`). |   Nee   |
 
 *\* Je moet ofwel `--file` of `--url` opgeven.*
 
