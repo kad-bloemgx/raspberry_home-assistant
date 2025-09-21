@@ -5,8 +5,6 @@ on:
       - master
 jobs:
   release:
-    # depending on default permission settings for your org (contents being read-only or read-write for workloads), you will have to add permissions
-    # see: https://docs.github.com/en/actions/security-guides/automatic-token-authentication#modifying-the-permissions-for-the-github_token
     permissions:
       contents: write
       pages: write
@@ -27,9 +25,3 @@ jobs:
           charts_dir: helm-charts
         env:
           CR_TOKEN: "${{ secrets.GITHUB_TOKEN }}"
-#      - name: Merge master --> gh-pages
-#        uses: devmasx/merge-branch@master
-#        with:
-#          type: now
-#          target_branch: gh-pages
-#          github_token: ${{ secrets.GITHUB_TOKEN }}
