@@ -24,6 +24,14 @@ spec:
             privileged: true
             capabilities:
               add: ["NET_ADMIN", "MKNOD"]
+          volumeMounts:
+          - name: dev-net-tun
+            mountPath: /dev/net/tun
           ports:
             - containerPort: {{ .Values.container.portTCP }}
               name: {{ .Values.appName }}
+      volumes:
+        - name: dev-net-tun
+          hostPath:
+            path: /dev/net/tun
+            type: CharDevice
