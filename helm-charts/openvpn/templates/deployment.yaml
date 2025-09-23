@@ -20,6 +20,10 @@ spec:
       containers:
         - name: {{ .Values.appName }}
           image: {{ .Values.image.repository }}:{{ .Values.image.tag }}
+          securityContext:
+            privileged: true
+            capabilities:
+              add: ["NET_ADMIN", "MKNOD"]
           ports:
             - containerPort: {{ .Values.container.portTCP }}
               name: {{ .Values.appName }}
