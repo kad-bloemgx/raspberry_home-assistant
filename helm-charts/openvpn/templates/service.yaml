@@ -11,5 +11,8 @@ spec:
     app: {{ .Values.appName }}
   ports:
     - protocol: TCP
-      port: {{ .Values.container.portTCP }}
-      name: web
+      port: {{ .Values.container.portTCP}}
+      name: portTCP
+    - protocol: TCP
+      port: {{ .Values.container.portAdmin }}
+      name: portAdmin
