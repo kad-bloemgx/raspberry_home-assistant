@@ -27,6 +27,8 @@ spec:
           volumeMounts:
           - name: dev-net-tun
             mountPath: /dev/net/tun
+          - name: pv-storage-openvpn
+            mountPath: "/var/log/"
           ports:
             - containerPort: {{ .Values.container.portTCP }}
               name: {{ .Values.appName }}
@@ -35,3 +37,6 @@ spec:
           hostPath:
             path: /dev/net/tun
             type: CharDevice
+        - name: pv-storage-openvpn
+          persistentVolumeClaim:
+            claimName: local-path-pvc
