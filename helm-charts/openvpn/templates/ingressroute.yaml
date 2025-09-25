@@ -16,7 +16,7 @@ spec:
     - match: Host(`openvpn.gerardbloemendaal.freemyip.com`) && PathPrefix(`/`)
       kind: Rule
       services:
-        - name: {{ .Values.appName }}
+        - name: openvpn
           port: {{ .Values.container.portTCP }}
   tls:
     certResolver: myresolver

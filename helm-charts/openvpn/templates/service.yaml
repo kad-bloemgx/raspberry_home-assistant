@@ -2,7 +2,7 @@ kind: Service
 apiVersion: v1
 
 metadata:
-  name: {{ .Values.appName }}
+  name: openvpn
   namespace: {{ .Values.nameSpace }}
   labels:
     app: {{ .Values.appName }}
