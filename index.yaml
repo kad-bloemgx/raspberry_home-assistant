@@ -14,6 +14,16 @@ entries:
   raspberry_openvpn:
   - apiVersion: v2
     appVersion: 1.16.0
+    created: "2025-09-25T16:27:07.764121806Z"
+    description: A Helm chart for Kubernetes
+    digest: 209ffb6e793e7f06e85d800918d7c921b6e399b25e748ca890ced2909edc09ee
+    name: raspberry_openvpn
+    type: application
+    urls:
+    - https://github.com/kad-bloemgx/raspberry_home-assistant/releases/download/raspberry_openvpn-0.2.3/raspberry_openvpn-0.2.3.tgz
+    version: 0.2.3
+  - apiVersion: v2
+    appVersion: 1.16.0
     created: "2025-09-25T16:20:38.807872005Z"
     description: A Helm chart for Kubernetes
     digest: 2dbb176c216ea79b3ced76e56df75734adec58eee26b578b36c59b010ae56ecc
@@ -113,4 +123,4 @@ entries:
     urls:
     - https://github.com/kad-bloemgx/raspberry_home-assistant/releases/download/raspberry_traefik-1.0.6/raspberry_traefik-1.0.6.tgz
     version: 1.0.6
-generated: "2025-09-25T16:20:38.807906138Z"
+generated: "2025-09-25T16:27:07.764258931Z"
