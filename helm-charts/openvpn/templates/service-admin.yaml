@@ -13,3 +13,5 @@ spec:
     - protocol: TCP
       port: {{ .Values.container.portAdmin }}
       name: web
+
+

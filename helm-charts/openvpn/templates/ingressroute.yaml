@@ -13,10 +13,12 @@ spec:
       services:
         - name: openvpn-admin
           port: {{ .Values.container.portAdmin }}
+          scheme: https
     - match: Host(`openvpn.gerardbloemendaal.freemyip.com`) && PathPrefix(`/`)
       kind: Rule
       services:
         - name: openvpn
           port: {{ .Values.container.portTCP }}
+          scheme: https
   tls:
     certResolver: myresolver
