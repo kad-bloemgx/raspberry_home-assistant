@@ -28,7 +28,7 @@ spec:
           - name: dev-net-tun
             mountPath: /dev/net/tun
           - name: pv-storage-openvpn
-            mountPath: "/var/log/"
+            mountPath: "/openvpn"
           ports:
             - containerPort: {{ .Values.container.portTCP }}
               name: {{ .Values.appName }}
