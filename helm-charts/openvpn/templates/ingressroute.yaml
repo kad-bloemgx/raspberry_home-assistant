@@ -11,7 +11,7 @@ spec:
     - match: Host(`openvpn-adm.gerardbloemendaal.freemyip.com`) && PathPrefix(`/`)
       kind: Rule
       services:
-        - name: {{ .Values.appName }}
+        - name: openvpn-admin
           port: {{ .Values.container.portAdmin }}
     - match: Host(`openvpn.gerardbloemendaal.freemyip.com`) && PathPrefix(`/`)
       kind: Rule
