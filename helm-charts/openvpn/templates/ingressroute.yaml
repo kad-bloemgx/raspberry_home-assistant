@@ -8,10 +8,15 @@ spec:
   entryPoints:
     - websecure
   routes:
-    - match: Host(`openvpn.gerardbloemendaal.freemyip.com`) && PathPrefix(`/`)
+    - match: Host(`openvpn-adm.gerardbloemendaal.freemyip.com`) && PathPrefix(`/`)
       kind: Rule
       services:
         - name: {{ .Values.appName }}
           port: {{ .Values.container.portAdmin }}
+    - match: Host(`openvpn.gerardbloemendaal.freemyip.com`) && PathPrefix(`/`)
+      kind: Rule
+      services:
+        - name: {{ .Values.appName }}
+          port: {{ .Values.container.portTCP }}
   tls:
     certResolver: myresolver
