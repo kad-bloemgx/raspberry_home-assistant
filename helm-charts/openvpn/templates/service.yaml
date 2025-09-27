@@ -12,7 +12,7 @@ spec:
   type: NodePort
   ports:
     - naem: openvpn
-      port: 443
+      port: {{.Values.container.portTCP}}
       protocol: TCP
-      targetPort: 443
+      targetPort: {{.Values.container.portTCP}}
       nodePort: 30051

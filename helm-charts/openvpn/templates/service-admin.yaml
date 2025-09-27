@@ -12,7 +12,7 @@ spec:
   type: NodePort
   ports:
     - name: openvpn-adm
-      port: 943
+      port: {{.Values.container.portAdmin}}
       protocol: TCP
-      targetPort: 943
+      targetPort: {{.Values.container.portAdmin}}
       nodePort: 30050
