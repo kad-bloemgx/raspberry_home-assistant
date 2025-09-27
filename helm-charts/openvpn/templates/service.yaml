@@ -15,4 +15,4 @@ spec:
       port: 443
       protocol: TCP
       targetPort: 443
-      nodePort: 33051
+      nodePort: 30051
