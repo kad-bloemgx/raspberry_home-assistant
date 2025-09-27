@@ -11,4 +11,3 @@ container:
   portAdmin: 943
   portTCP: 443
   portUDP: 1194
-  portUDP: 1194

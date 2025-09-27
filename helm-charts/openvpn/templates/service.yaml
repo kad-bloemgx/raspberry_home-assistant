@@ -9,7 +9,10 @@ metadata:
 spec:
   selector:
     app: {{ .Values.appName }}
+  type: NodePort
   ports:
-    - protocol: TCP
-      port: {{ .Values.container.portTCP }}
-      name: web
+    - naem: openvpn
+      port: 443
+      protocol: TCP
+      targetPort: 443
+      nodePort: 33051

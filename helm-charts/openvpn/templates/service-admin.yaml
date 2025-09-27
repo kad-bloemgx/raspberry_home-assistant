@@ -9,9 +9,10 @@ metadata:
 spec:
   selector:
     app: {{ .Values.appName }}
+  type: NodePort
   ports:
-    - protocol: TCP
-      port: {{ .Values.container.portAdmin }}
-      name: web
-
-
+    - name: openvpn-adm
+      port: 943
+      protocol: TCP
+      targetPort: 943
+      nodePort: 30050
