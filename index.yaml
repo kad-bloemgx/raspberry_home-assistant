@@ -3,6 +3,16 @@ entries:
   postgresql:
   - apiVersion: v2
     appVersion: 1.16.0
+    created: "2025-10-13T14:18:09.608213215Z"
+    description: A Helm chart for Kubernetes
+    digest: ff4c2edf10646b67a3f554e51cd8ea84d0b8ded870c299c675ce107a9bc6b412
+    name: postgresql
+    type: application
+    urls:
+    - https://github.com/kad-bloemgx/raspberry_home-assistant/releases/download/postgresql-0.1.4/postgresql-0.1.4.tgz
+    version: 0.1.4
+  - apiVersion: v2
+    appVersion: 1.16.0
     created: "2025-10-13T14:13:58.061682803Z"
     description: A Helm chart for Kubernetes
     digest: 28e9fc8ea8977bcb20d6626cb9b3f8b62154e48b94b22c12f1e4b8c32a10c3f3
@@ -305,4 +315,4 @@ entries:
     urls:
     - https://github.com/kad-bloemgx/raspberry_home-assistant/releases/download/raspberry_traefik-1.0.6/raspberry_traefik-1.0.6.tgz
     version: 1.0.6
-generated: "2025-10-13T14:13:58.061744098Z"
+generated: "2025-10-13T14:18:09.608270091Z"
