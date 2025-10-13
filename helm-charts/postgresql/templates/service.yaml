@@ -2,6 +2,7 @@ apiVersion: v1
 kind: Service
 metadata:
   name: postgres
+  namespace: {{ .Values.nameSpace }}
 spec:
   clusterIP: None  # This makes the service headless (useful for StatefulSet)
   ports:
