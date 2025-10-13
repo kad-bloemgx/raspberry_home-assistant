@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
       - name: postgres
-        image: postgres:18 # You can change the version here
+        image: postgres:18.0 # You can change the version here
         env:
           - name: POSTGRES_PASSWORD
             value: "Welkom2025!" # Make sure to store it securely
