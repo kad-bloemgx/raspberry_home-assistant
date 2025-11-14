@@ -325,4 +325,15 @@ entries:
     urls:
     - https://github.com/kad-bloemgx/raspberry_home-assistant/releases/download/raspberry_traefik-1.0.6/raspberry_traefik-1.0.6.tgz
     version: 1.0.6
-generated: "2025-10-13T14:24:37.060426219Z"
+  ubuntu:
+  - apiVersion: v2
+    appVersion: 1.16.0
+    created: "2025-11-14T16:35:16.087074773Z"
+    description: A Helm chart for Kubernetes
+    digest: e3de435ac941a0f165c00e75c4eec6098d442e5508c6f25188414828acfc357a
+    name: ubuntu
+    type: application
+    urls:
+    - https://github.com/kad-bloemgx/raspberry_home-assistant/releases/download/ubuntu-0.1.0/ubuntu-0.1.0.tgz
+    version: 0.1.0
+generated: "2025-11-14T16:35:16.087235629Z"
