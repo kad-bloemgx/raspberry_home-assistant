@@ -1,0 +1,8 @@
+replicaCount: 1
+
+appName: ubuntu
+nameSpace: ubuntu
+
+image:
+  repository: ubuntu
+  tag: "26.04"
