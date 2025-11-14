@@ -328,6 +328,16 @@ entries:
   ubuntu:
   - apiVersion: v2
     appVersion: 1.16.0
+    created: "2025-11-14T16:53:34.088952961Z"
+    description: A Helm chart for Kubernetes
+    digest: 344fd752326287686ab8ff22d2b67dcea8667a7c2408140fc3ed5b2d4567e827
+    name: ubuntu
+    type: application
+    urls:
+    - https://github.com/kad-bloemgx/raspberry_home-assistant/releases/download/ubuntu-0.1.3/ubuntu-0.1.3.tgz
+    version: 0.1.3
+  - apiVersion: v2
+    appVersion: 1.16.0
     created: "2025-11-14T16:50:31.880609908Z"
     description: A Helm chart for Kubernetes
     digest: 09bce062e2a92460ba0881f71e257999cf442d5d486ecf60c06d560077c6bfe0
@@ -356,4 +366,4 @@ entries:
     urls:
     - https://github.com/kad-bloemgx/raspberry_home-assistant/releases/download/ubuntu-0.1.0/ubuntu-0.1.0.tgz
     version: 0.1.0
-generated: "2025-11-14T16:50:31.880677069Z"
+generated: "2025-11-14T16:53:34.089030046Z"
