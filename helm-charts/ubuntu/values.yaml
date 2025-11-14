@@ -1,7 +1,7 @@
 replicaCount: 1
 
 appName: ubuntu
-nameSpace: ubuntu
+nameSpace: tools
 
 image:
   repository: ubuntu
