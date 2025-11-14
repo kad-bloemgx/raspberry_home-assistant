@@ -5,4 +5,4 @@ nameSpace: tools
 
 image:
   repository: ubuntu
-  tag: "jammy"
+  tag: "noble"
