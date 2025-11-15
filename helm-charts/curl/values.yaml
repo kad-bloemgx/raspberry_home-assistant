@@ -4,5 +4,5 @@ appName: curl
 nameSpace: tools
 
 image:
-  repository: alpine/curl
-  tag: "latest"
+  repository: ubuntu
+  tag: resolute
