@@ -4,5 +4,5 @@ appName: curl
 nameSpace: tools
 
 image:
-  repository: "curlimages/curl"
-  tag: "8.17.0"
+  repository: alpine/curl
+  tag: "latest"
