@@ -1,0 +1,8 @@
+replicaCount: 1
+
+appName: curl
+nameSpace: tools
+
+image:
+  repository: curl
+  tag: "8.17.0"

@@ -1,8 +1,0 @@
-replicaCount: 1
-
-appName: ubuntu
-nameSpace: tools
-
-image:
-  repository: ubuntu
-  tag: "noble"
