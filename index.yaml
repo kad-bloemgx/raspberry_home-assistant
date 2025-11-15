@@ -1,5 +1,16 @@
 apiVersion: v1
 entries:
+  curl:
+  - apiVersion: v2
+    appVersion: 1.16.0
+    created: "2025-11-15T12:11:49.894191788Z"
+    description: A Helm chart for Kubernetes
+    digest: 36bddca3e55d5d74b97ae07cd62a4a32486ec2b262119363db998076a843ac1c
+    name: curl
+    type: application
+    urls:
+    - https://github.com/kad-bloemgx/raspberry_home-assistant/releases/download/curl-0.1.5/curl-0.1.5.tgz
+    version: 0.1.5
   postgresql:
   - apiVersion: v2
     appVersion: 1.16.0
@@ -376,4 +387,4 @@ entries:
     urls:
     - https://github.com/kad-bloemgx/raspberry_home-assistant/releases/download/ubuntu-0.1.0/ubuntu-0.1.0.tgz
     version: 0.1.0
-generated: "2025-11-14T17:37:51.792551157Z"
+generated: "2025-11-15T12:11:49.894285794Z"
