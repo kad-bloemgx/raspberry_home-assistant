@@ -11,7 +11,7 @@ spec:
     app: {{ .Values.appName }}
   type: NodePort
   ports:
-    - naem: openvpn
+    - name: openvpn
       port: {{.Values.container.portTCP}}
       protocol: TCP
       targetPort: {{.Values.container.portTCP}}
