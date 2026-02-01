@@ -348,6 +348,16 @@ entries:
   raspberry_traefik:
   - apiVersion: v2
     appVersion: 1.16.0
+    created: "2026-02-01T13:42:43.76792525Z"
+    description: A Helm chart for Kubernetes
+    digest: 197460a5600ed0cf7796a604e705983f83a36d797b9280d38a594a72b611e553
+    name: raspberry_traefik
+    type: application
+    urls:
+    - https://github.com/kad-bloemgx/raspberry_home-assistant/releases/download/raspberry_traefik-1.0.8/raspberry_traefik-1.0.8.tgz
+    version: 1.0.8
+  - apiVersion: v2
+    appVersion: 1.16.0
     created: "2025-09-27T07:14:23.985797513Z"
     description: A Helm chart for Kubernetes
     digest: a2b30e26e4d74e2f17a1460a8a6295a48bbbb06e74e3b8755d623176b416e670
@@ -417,4 +427,4 @@ entries:
     urls:
     - https://github.com/kad-bloemgx/raspberry_home-assistant/releases/download/ubuntu-0.1.0/ubuntu-0.1.0.tgz
     version: 0.1.0
-generated: "2025-11-15T12:35:06.835266523Z"
+generated: "2026-02-01T13:42:43.768040385Z"
