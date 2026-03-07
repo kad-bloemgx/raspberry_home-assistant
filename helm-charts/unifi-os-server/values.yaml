@@ -1,0 +1,8 @@
+replicaCount: 1
+
+appName: unifi-os-server
+nameSpace: unifi
+
+image:
+  repository: ghcr.io/lemker/unifi-os-server
+  tag: "latest"
