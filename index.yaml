@@ -501,6 +501,16 @@ entries:
   unifi-traefik:
   - apiVersion: v2
     appVersion: 1.16.0
+    created: "2026-03-08T19:50:11.468884672Z"
+    description: A Helm chart for Kubernetes
+    digest: bdda59bb3c2b38007f0fee28c0ad4e449c65d2cd1e3b199978a6aecfbe900b63
+    name: unifi-traefik
+    type: application
+    urls:
+    - https://github.com/kad-bloemgx/raspberry_home-assistant/releases/download/unifi-traefik-1.1.0/unifi-traefik-1.1.0.tgz
+    version: 1.1.0
+  - apiVersion: v2
+    appVersion: 1.16.0
     created: "2026-03-08T19:30:57.818217353Z"
     description: A Helm chart for Kubernetes
     digest: 9814f8a5044b90203a77a4e9c60e987c69fcb2daed18e6a2cac96aeec463ab7f
@@ -580,4 +590,4 @@ entries:
     urls:
     - https://github.com/kad-bloemgx/raspberry_home-assistant/releases/download/unifi_traefik-1.0.2/unifi_traefik-1.0.2.tgz
     version: 1.0.2
-generated: "2026-03-08T19:30:57.818354782Z"
+generated: "2026-03-08T19:50:11.469039785Z"
