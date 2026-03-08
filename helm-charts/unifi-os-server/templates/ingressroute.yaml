@@ -7,9 +7,10 @@ metadata:
 spec:
   entryPoints:
     - websecure
+    - web
   routes:
     - match: Host(`unifi.lokaal`) && PathPrefix(`/`)
       kind: Rule
       services:
-        - name: unifi-os-server
+        - name: unifi-os-server-webui-svc
           port: 443
