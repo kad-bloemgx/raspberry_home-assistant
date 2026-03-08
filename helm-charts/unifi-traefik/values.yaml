@@ -1,7 +1,12 @@
 replicaCount: 1
 
 appName: traefik
-nameSpace: default
+nameSpace: ingress
+
+providers:
+  kubernetesCRD:
+    enabled: true
+    allowCrossNamespace: true
 
 image:
   repository: traefik
