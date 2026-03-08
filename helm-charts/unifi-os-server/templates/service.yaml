@@ -4,11 +4,13 @@ metadata:
   name: unifi-os-server-webui-svc
   namespace: {{ .Values.nameSpace }}
 spec:
+  type: NodePort
   ports:
     - name: webui
       port: 443
       protocol: TCP
       targetPort: 443
+      nodePort: 443
   selector:
     app: {{ .Values.appName }}
 
@@ -19,11 +21,13 @@ metadata:
   name: unifi-os-server-rtp-svc
   namespace: {{ .Values.nameSpace }}
 spec:
+  type: NodePort
   ports:
     - name: rtp
       port: 5005
       protocol: TCP
       targetPort: 5005
+      nodePort: 5005
   selector:
     app: {{ .Values.appName }}
 
@@ -34,11 +38,13 @@ metadata:
   name: unifi-os-server-id-hub-svc
   namespace: {{ .Values.nameSpace }}
 spec:
+  type: NodePort
   ports:
     - name: id-hub
       port: 9543
       protocol: TCP
       targetPort: 9543
+      nodePort: 9543
   selector:
     app: {{ .Values.appName }}
 
@@ -49,11 +55,13 @@ metadata:
   name: unifi-os-server-mobile-speedtest-svc
   namespace: {{ .Values.nameSpace }}
 spec:
+  type: NodePort
   ports:
     - name: mobile-speedtest
       port: 6789
       protocol: TCP
       targetPort: 6789
+      nodePort: 6789
   selector:
     app: {{ .Values.appName }}
 
@@ -64,11 +72,13 @@ metadata:
   name: unifi-os-server-communication-svc
   namespace: {{ .Values.nameSpace }}
 spec:
+  type: NodePort
   ports:
     - name: communication
       port: 8080
       protocol: TCP
       targetPort: 8080
+      nodePort: 8080
   selector:
     app: {{ .Values.appName }}
 
@@ -79,11 +89,13 @@ metadata:
   name: unifi-os-server-network-app-svc
   namespace: {{ .Values.nameSpace }}
 spec:
+  type: NodePort
   ports:
     - name: network-app
       port: 8443
       protocol: TCP
       targetPort: 8443
+      nodePort: 8443
   selector:
     app: {{ .Values.appName }}
 
@@ -94,11 +106,13 @@ metadata:
   name: unifi-os-server-hotspot-secured-svc
   namespace: {{ .Values.nameSpace }}
 spec:
+  type: NodePort
   ports:
     - name: hotspot-secured
       port: 8444
       protocol: TCP
       targetPort: 8444
+      nodePort: 8444
   selector:
     app: {{ .Values.appName }}
 
@@ -109,11 +123,13 @@ metadata:
   name: unifi-os-server-stun-svc
   namespace: {{ .Values.nameSpace }}
 spec:
+  type: NodePort
   ports:
     - name: stun
       port: 3478
       protocol: UDP
       targetPort: 3478
+      nodePort: 3478
   selector:
     app: {{ .Values.appName }}
 
@@ -124,11 +140,13 @@ metadata:
   name: unifi-os-server-syslog-svc
   namespace: {{ .Values.nameSpace }}
 spec:
+  type: NodePort
   ports:
     - name: syslog
       port: 5514
       protocol: UDP
       targetPort: 5514
+      nodePort: 5514
   selector:
     app: {{ .Values.appName }}
 
@@ -139,11 +157,13 @@ metadata:
   name: unifi-os-server-discovery-svc
   namespace: {{ .Values.nameSpace }}
 spec:
+  type: NodePort
   ports:
     - name: discovery
       port: 10003
       protocol: UDP
       targetPort: 10003
+      nodePort: 10003
   selector:
     app: {{ .Values.appName }}
 
@@ -154,11 +174,13 @@ metadata:
   name: unifi-os-server-site-supervisor-svc
   namespace: {{ .Values.nameSpace }}
 spec:
+  type: NodePort
   ports:
     - name: site-supervisor
       port: 11084
       protocol: TCP
       targetPort: 11084
+      nodePort: 11084
   selector:
     app: unifi-os-server
 
@@ -169,11 +191,13 @@ metadata:
   name: unifi-os-server-aqmps-svc
   namespace: {{ .Values.nameSpace }}
 spec:
+  type: NodePort
   ports:
     - name: aqmps
       port: 5671
       protocol: TCP
       targetPort: 5671
+      nodePort: 5671
   selector:
     app: unifi-os-server
 
@@ -184,11 +208,13 @@ metadata:
   name: unifi-os-server-hotspot-redirect-0-svc
   namespace: {{ .Values.nameSpace }}
 spec:
+  type: NodePort
   ports:
     - name: hotspot-redirect-0
       port: 8880
       protocol: TCP
       targetPort: 8880
+      nodePort: 8880
   selector:
     app: unifi-os-server
 
@@ -199,11 +225,13 @@ metadata:
   name: unifi-os-server-hotspot-redirect-1-svc
   namespace: {{ .Values.nameSpace }}
 spec:
+  type: NodePort
   ports:
     - name: hotspot-redirect-1
       port: 8881
       protocol: TCP
       targetPort: 8881
+      nodePort: 8881
   selector:
     app: unifi-os-server
 
@@ -214,10 +242,12 @@ metadata:
   name: unifi-os-server-hotspot-redirect-2-svc
   namespace: {{ .Values.nameSpace }}
 spec:
+  type: NodePort
   ports:
     - name: hotspot-redirect-2
       port: 8882
       protocol: TCP
       targetPort: 8882
+      nodePort: 8882
   selector:
     app: unifi-os-server
