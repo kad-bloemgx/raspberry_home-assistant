@@ -11,5 +11,5 @@ spec:
     - match: Host(`unifi.lokaal`) && PathPrefix(`/`)
       kind: Rule
       services:
-        - name: unifi-os-server-webui-svc
+        - name: unifi-os-server
           port: 443
