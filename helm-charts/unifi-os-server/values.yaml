@@ -5,4 +5,4 @@ nameSpace: unifi
 
 image:
   repository: ghcr.io/lemker/unifi-os-server
-  tag: "5.0.6-linux-arm64"
+  tag: "latest"
