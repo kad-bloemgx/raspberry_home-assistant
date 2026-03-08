@@ -1,0 +1,15 @@
+kind: IngressRoute
+apiVersion: traefik.io/v1alpha1
+
+metadata:
+  name: unifi-webui
+  namespace: {{ .Values.nameSpace }}
+spec:
+  entryPoints:
+    - websecure
+  routes:
+    - match: Host(`unifi.lokaal`) && PathPrefix(`/`)
+      kind: Rule
+      services:
+        - name: unifi-os-server-webui-svc
+          port: 443
