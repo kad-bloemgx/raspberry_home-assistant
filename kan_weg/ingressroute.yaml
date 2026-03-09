@@ -1,26 +1,31 @@
-# kind: IngressRoute
-# apiVersion: traefik.io/v1alpha1
+kind: IngressRoute
+apiVersion: traefik.io/v1alpha1
 
-# metadata:
-#   name: ingressroutetls
-#   namespace: {{ .Values.nameSpace }}
-# spec:
-#   entryPoints:
-#     - websecure
-#  routes:
-#     - match: Host(`openvpn-adm.gerardbloemendaal.freemyip.com`) && PathPrefix(`/`)
-#      kind: Rule
-#      services:
-#        - name: openvpn-admin
-#          port: {{ .Values.container.portAdmin }}
-#          scheme: https
-#          insecureSkipVerify: true
-#    - match: Host(`openvpn.gerardbloemendaal.freemyip.com`) && PathPrefix(`/`)
-#      kind: Rule
-#      services:
-#        - name: openvpn
-#          port: {{ .Values.container.portTCP }}
-#          scheme: https
-#          insecureSkipVerify: true
-#  tls:
-  #    certResolver: myresolver
+metadata:
+  name: unifi-webui
+  namespace: {{ .Values.nameSpace }}
+spec:
+  entryPoints:
+    - web
+  routes:
+    - match: Host(`unifi.lokaal`) && PathPrefix(`/`)
+      kind: Rule
+      services:
+        - name: unifi-os-server-webui-svc
+          port: 80
+
+---
+
+kind: IngressRoute
+apiVersion: traefik.io/v1alpha1
+
+metadata:
+  name: unifi-rtp
+  namespace: {{ .Values.nameSpace }}
+spec:
+  entryPoints:
+    - rtp
+  routes:
+      services:
+        - name: unifi-os-server-rtp-svc
+          port: 5005
