@@ -470,6 +470,16 @@ entries:
   unifi-os-server:
   - apiVersion: v2
     appVersion: 1.18.0
+    created: "2026-03-09T09:05:45.853242599Z"
+    description: A Helm chart for Kubernetes
+    digest: 00a1afdc8fafcbeba351e7fa66faadaf67659a7a1d571bf515fc5ed81e2114d3
+    name: unifi-os-server
+    type: application
+    urls:
+    - https://github.com/kad-bloemgx/raspberry_home-assistant/releases/download/unifi-os-server-1.0.14/unifi-os-server-1.0.14.tgz
+    version: 1.0.14
+  - apiVersion: v2
+    appVersion: 1.18.0
     created: "2026-03-09T08:43:48.441761859Z"
     description: A Helm chart for Kubernetes
     digest: 889d93c558eff5c7c8d668601f1073b53f42e52dfea7ab1ac87500048ed6968f
@@ -740,4 +750,4 @@ entries:
     urls:
     - https://github.com/kad-bloemgx/raspberry_home-assistant/releases/download/unifi_traefik-1.0.2/unifi_traefik-1.0.2.tgz
     version: 1.0.2
-generated: "2026-03-09T08:43:48.441925466Z"
+generated: "2026-03-09T09:05:45.853487602Z"
