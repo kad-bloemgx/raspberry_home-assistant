@@ -8,14 +8,8 @@ metadata:
 spec:
   ports:
     - protocol: TCP
-      name: web
-      port: 8000
-    - protocol: TCP
-      name: admin
-      port: 8080
-    - protocol: TCP
-      name: rtp
-      port: 5005
+      name: webui-svc
+      port: 443
   type: LoadBalancer
   selector:
-    app: {{ .Values.appName }}
+    app: unifi-os-server-webui-svc

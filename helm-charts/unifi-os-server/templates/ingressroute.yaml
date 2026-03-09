@@ -6,7 +6,6 @@ metadata:
   namespace: {{ .Values.nameSpace }}
 spec:
   entryPoints:
-    - websecure
     - web
   routes:
     - match: Host(`unifi.lokaal`) && PathPrefix(`/`)
@@ -14,3 +13,19 @@ spec:
       services:
         - name: unifi-os-server-webui-svc
           port: 80
+
+---
+
+kind: IngressRoute
+apiVersion: traefik.io/v1alpha1
+
+metadata:
+  name: unifi-rtp
+  namespace: {{ .Values.nameSpace }}
+spec:
+  entryPoints:
+    - rtp
+  routes:
+      services:
+        - name: unifi-os-server-rtp-svc
+          port: 5005
