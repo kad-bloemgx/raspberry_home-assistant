@@ -7,19 +7,70 @@ metadata:
 
 spec:
   allocateLoadBalancerNodePorts: false
+
   ports:
     - protocol: TCP
       name: webui-svc
       port: 80
       targetPort: 80
     - protocol: TCP
-      name: webui-rtp
+      name: rtp-svc
       port: 5005
       targetPort: 5005
+    - protocol: TCP
+      name: id-hub-svc
+      port: 9543
+      targetPort: 9543
+    - protocol: TCP
+      name: mobile-speedtest
+      port: 6789
+      targetPort: 6789
+    - protocol: TCP
+      name: communication
+      port: 8080
+      targetPort: 8080
+    - protocol: TCP
+      name: network-app
+      port: 8443
+      targetPort: 8443
+    - protocol: TCP
+      name: hotspot-secured
+      port: 8444
+      targetPort: 8444
+    - protocol: UDP
+      name: stun
+      port: 3478
+      targetPort: 3478
+    - protocol: UDP
+      name: syslog
+      port: 5514
+      targetPort: 5514
+    - protocol: UDP
+      name: discovery
+      port: 10003
+      targetPort: 10003
+    - protocol: TCP
+      name: site-supervisor
+      port: 11084
+      targetPort: 11084
+    - protocol: TCP
+      name: aqmps
+      port: 5671
+      targetPort: 5671
+    - protocol: TCP
+      name: hotspot-redirect-0
+      port: 8880
+      targetPort: 8880
+    - protocol: TCP
+      name: hotspot-redirect-1
+      port: 8881
+      targetPort: 8881
+    - protocol: TCP
+      name: hotspot-redirect-2
+      port: 8882
+      targetPort: 8882
+
   type: LoadBalancer
 
   selector:
     app: {{ .Values.appName }}
-
-
-
