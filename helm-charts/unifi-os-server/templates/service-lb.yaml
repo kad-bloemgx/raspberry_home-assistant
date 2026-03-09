@@ -12,7 +12,14 @@ spec:
       name: webui-svc
       port: 80
       targetPort: 80
+    - protocol: TCP
+      name: webui-rtp
+      port: 5005
+      targetPort: 5005
   type: LoadBalancer
 
   selector:
     app: {{ .Values.appName }}
+
+
+
