@@ -1,4 +1,5 @@
 apiVersion: v1
+apiVersion: v1
 kind: Service
 metadata:
   name: {{ .Values.appName }}
@@ -8,13 +9,13 @@ spec:
   ports:
     - protocol: TCP
       name: web
-      port: 9080
+      port: 8000
     - protocol: TCP
       name: admin
-      port: 9000
+      port: 8080
     - protocol: TCP
       name: websecure
-      port: 9443
+      port: 4443
   type: LoadBalancer
   selector:
     app: {{ .Values.appName }}
