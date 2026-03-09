@@ -11,6 +11,7 @@ spec:
       name: webui-svc
       port: 80
       targetPort: 80
+      nodePort: 80
   type: LoadBalancer
   selector:
     app: {{ .Values.appName }}
