@@ -22,17 +22,11 @@ spec:
         - name: {{ .Values.appName }}
           image: {{ .Values.image.repository }}:{{ .Values.image.tag }}
           args:
-            - --api.insecure
-            - --log.level=DEBUG
-            - --accesslog
-            - --entryPoints.web.Address=:8000
-            - --entryPoints.websecure.Address=:4443
+            - --entrypoints.web.address=:8000
+            - --entrypoints.admin.address=:8080
             - --providers.kubernetescrd
-            - --serversTransport.insecureSkipVerify=true
           ports:
             - name: web
               containerPort: 8000
-            - name: websecure
-              containerPort: 4443
             - name: admin
               containerPort: 8080

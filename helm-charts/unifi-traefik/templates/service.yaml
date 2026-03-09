@@ -13,9 +13,6 @@ spec:
     - protocol: TCP
       name: admin
       port: 8080
-    - protocol: TCP
-      name: websecure
-      port: 4443
   type: LoadBalancer
   selector:
     app: {{ .Values.appName }}
