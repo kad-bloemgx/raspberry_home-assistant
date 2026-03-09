@@ -9,7 +9,8 @@ spec:
   ports:
     - protocol: TCP
       name: webui-svc
-      port: 443
+      port: 80
+      targetPort: 80
   type: LoadBalancer
   selector:
-    app: unifi-os-server-webui-svc
+    app: {{ .Values.appName }}
