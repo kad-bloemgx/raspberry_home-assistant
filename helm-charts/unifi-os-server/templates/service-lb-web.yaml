@@ -6,12 +6,12 @@ metadata:
   namespace: {{ .Values.nameSpace }}
 
 spec:
+  allocateLoadBalancerNodePorts: false
   ports:
     - protocol: TCP
       name: webui-svc
       port: 80
       targetPort: 80
-      nodePort: 80
   type: LoadBalancer
   selector:
     app: {{ .Values.appName }}
