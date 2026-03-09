@@ -6,9 +6,9 @@ metadata:
 spec:
   ports:
     - name: webui
-      port: 443
+      port: 80
       protocol: TCP
-      targetPort: 443
+      targetPort: 80
   selector:
     app: {{ .Values.appName }}
 

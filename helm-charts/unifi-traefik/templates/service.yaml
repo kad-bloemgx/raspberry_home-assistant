@@ -8,13 +8,13 @@ spec:
   ports:
     - protocol: TCP
       name: web
-      port: 8000
+      port: 9080
     - protocol: TCP
       name: admin
-      port: 8080
+      port: 9000
     - protocol: TCP
       name: websecure
-      port: 4443
+      port: 9443
   type: LoadBalancer
   selector:
     app: {{ .Values.appName }}
