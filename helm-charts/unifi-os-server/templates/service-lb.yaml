@@ -11,8 +11,8 @@ spec:
   ports:
     - protocol: TCP
       name: webui-svc
-      port: 80
-      targetPort: 80
+      port: 443
+      targetPort: 443
     - protocol: TCP
       name: rtp-svc
       port: 5005
