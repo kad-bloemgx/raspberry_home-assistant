@@ -3,7 +3,9 @@ kind: Service
 metadata:
   name: {{ .Values.appName }}
   namespace: {{ .Values.nameSpace }}
-
+  annotations:
+    metallb.io/address-pool: default-pool
+    metallb.io/loadBalancerIPs: 192.168.1.29
 spec:
   ports:
     - protocol: TCP
