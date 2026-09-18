@@ -1,0 +1,39 @@
+argo-cd:
+  nameOverride: argocd
+  fullnameOverride: argocd
+  namespaceOverride: argo-cd
+
+  global:
+    domain: argocd.local
+
+  configs:
+    params:
+      server.insecure: true
+    repositories:
+      raspberry-home-assistant:
+        url: https://github.com/kad-bloemgx/raspberry_home-assistant.git
+        type: git
+
+  extraObjects:
+    - apiVersion: argoproj.io/v1alpha1
+      kind: Application
+      metadata:
+        name: raspberry-home-assistant
+        namespace: argo-cd
+      spec:
+        project: default
+        source:
+          repoURL: https://github.com/kad-bloemgx/raspberry_home-assistant.git
+          targetRevision: HEAD
+          path: deploy/helm/argocd
+        destination:
+          server: https://kubernetes.default.svc
+          namespace: argo-cd
+        syncPolicy:
+          automated:
+            prune: true
+            selfHeal: true
+
+  server:
+    ingress:
+      enabled: false
