@@ -16,23 +16,36 @@ argo-cd:
 
   extraObjects:
     - apiVersion: argoproj.io/v1alpha1
-      kind: Application
+      kind: ApplicationSet
       metadata:
-        name: raspberry-home-assistant
+        name: raspberry-home-assistant-apps
         namespace: argo-cd
       spec:
-        project: default
-        source:
-          repoURL: https://github.com/kad-bloemgx/raspberry_home-assistant.git
-          targetRevision: HEAD
-          path: deploy/helm/argocd
-        destination:
-          server: https://kubernetes.default.svc
-          namespace: argo-cd
-        syncPolicy:
-          automated:
-            prune: true
-            selfHeal: true
+        generators:
+          - git:
+              repoURL: https://github.com/kad-bloemgx/raspberry_home-assistant.git
+              revision: HEAD
+              directories:
+                - path: deploy/helm/argocd/*
+        template:
+          metadata:
+            name: "{{`{{path.basename}}`}}"
+            namespace: argo-cd
+          spec:
+            project: default
+            source:
+              repoURL: https://github.com/kad-bloemgx/raspberry_home-assistant.git
+              targetRevision: HEAD
+              path: "{{`{{path}}`}}"
+            destination:
+              server: https://kubernetes.default.svc
+              namespace: "{{`{{path.basename}}`}}"
+            syncPolicy:
+              automated:
+                prune: true
+                selfHeal: true
+              syncOptions:
+                - CreateNamespace=true
 
   server:
     ingress:
