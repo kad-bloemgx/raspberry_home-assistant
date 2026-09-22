@@ -3,6 +3,20 @@ entries:
   argo-cd-wrapper:
   - apiVersion: v2
     appVersion: 3.5.6
+    created: "2026-09-22T13:47:45.618588213Z"
+    dependencies:
+    - name: argo-cd
+      repository: https://argoproj.github.io/argo-helm
+      version: 10.9.2
+    description: Wrapper chart for deploying Argo CD
+    digest: 6ad899586b91f4c7b07df472e1c78bfd0b6532410bc7adbd25648bd3617bebe7
+    name: argo-cd-wrapper
+    type: application
+    urls:
+    - https://github.com/kad-bloemgx/raspberry_home-assistant/releases/download/argo-cd-wrapper-0.1.5/argo-cd-wrapper-0.1.5.tgz
+    version: 0.1.5
+  - apiVersion: v2
+    appVersion: 3.5.6
     created: "2026-09-22T13:29:07.641187315Z"
     dependencies:
     - name: argo-cd
@@ -913,4 +927,4 @@ entries:
     urls:
     - https://github.com/kad-bloemgx/raspberry_home-assistant/releases/download/unifi_traefik-1.0.2/unifi_traefik-1.0.2.tgz
     version: 1.0.2
-generated: "2026-09-22T13:29:07.64126435Z"
+generated: "2026-09-22T13:47:45.61871242Z"
