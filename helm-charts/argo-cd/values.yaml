@@ -37,3 +37,7 @@ argo-cd:
   server:
     ingress:
       enabled: false
+
+ingress:
+  enabled: true
+  host: argocd.gerardbloemendaal.freemyip.com
