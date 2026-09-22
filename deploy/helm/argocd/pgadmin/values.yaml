@@ -4,7 +4,11 @@ pgadmin4:
 
   env:
     email: admin@gerardbloemendaal.freemyip.com
-    password: ChangeMe123!
+    # Wachtwoord komt uit een handmatig aangemaakte Secret, niet uit git.
+
+  existingSecret: pgadmin-credentials
+  secretKeys:
+    pgadminPasswordKey: password
 
   ingress:
     enabled: false

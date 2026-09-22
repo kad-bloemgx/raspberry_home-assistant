@@ -1,0 +1,17 @@
+postgresql:
+  fullnameOverride: postgresql
+
+  auth:
+    username: appuser
+    database: appdb
+    # Wachtwoorden komen uit een handmatig aangemaakte Secret, niet uit git.
+    existingSecret: postgresql-credentials
+    secretKeys:
+      adminPasswordKey: postgres-password
+      userPasswordKey: password
+
+  primary:
+    persistence:
+      enabled: true
+      size: 10Gi
+      storageClass: local-path
