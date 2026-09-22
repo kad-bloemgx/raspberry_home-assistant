@@ -48,3 +48,4 @@ pgadmin4:
 ingress:
   enabled: true
   host: pgadmin.gerardbloemendaal.freemyip.com
+
