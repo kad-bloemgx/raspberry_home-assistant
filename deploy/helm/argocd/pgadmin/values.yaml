@@ -1,0 +1,18 @@
+pgadmin4:
+  nameOverride: pgadmin
+  fullnameOverride: pgadmin
+
+  env:
+    email: admin@gerardbloemendaal.freemyip.com
+    password: ChangeMe123!
+
+  ingress:
+    enabled: false
+
+  service:
+    type: ClusterIP
+    port: 80
+
+ingress:
+  enabled: true
+  host: pgadmin.gerardbloemendaal.freemyip.com
