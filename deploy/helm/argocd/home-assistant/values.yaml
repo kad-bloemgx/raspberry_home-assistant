@@ -15,8 +15,42 @@ home-assistant:
     size: 10Gi
     storageClass: local-path
 
+  configuration:
+    enabled: true
+    trusted_proxies:
+      - 10.42.0.0/16
+
+  initContainers:
+    - name: configure-reverse-proxy
+      image: mikefarah/yq:4
+      securityContext:
+        runAsUser: 0
+      command:
+        - /bin/sh
+        - -c
+      args:
+        - |
+          set -eu
+          mkdir -p /config/.storage
+          if [ -f /config/.storage/http ]; then
+            yq -o=json -i \
+              '.data.stable.use_x_forwarded_for = true |
+               .data.stable.trusted_proxies = ["10.42.0.0/16"]' \
+              /config/.storage/http
+          else
+            yq -o=json '.data.stable.created_at = now' \
+              /config-templates/http-storage.json > /config/.storage/http.tmp
+            mv /config/.storage/http.tmp /config/.storage/http
+          fi
+      volumeMounts:
+        - name: homeassistant
+          mountPath: /config
+        - name: config-volume
+          mountPath: /config-templates
+
   ingress:
     enabled: false
+    external: true
 
 ingress:
   enabled: true
