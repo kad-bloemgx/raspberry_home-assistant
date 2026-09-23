@@ -1,0 +1,23 @@
+home-assistant:
+  replicaCount: 1
+  fullnameOverride: homeassistant
+
+  image:
+    repository: ghcr.io/home-assistant/home-assistant
+    tag: "2026.9.3"
+
+  service:
+    type: ClusterIP
+    port: 8123
+
+  persistence:
+    enabled: true
+    size: 10Gi
+    storageClass: local-path
+
+  ingress:
+    enabled: false
+
+ingress:
+  enabled: true
+  host: homeassistant.gerardbloemendaal.freemyip.com

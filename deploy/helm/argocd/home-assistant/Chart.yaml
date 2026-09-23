@@ -1,0 +1,12 @@
+apiVersion: v2
+name: home-assistant-wrapper
+description: Wrapper chart for deploying Home Assistant via ArgoCD
+
+type: application
+version: 0.1.0
+appVersion: "2026.9.3"
+
+dependencies:
+  - name: home-assistant
+    version: 0.3.82
+    repository: https://pajikos.github.io/home-assistant-helm-chart
