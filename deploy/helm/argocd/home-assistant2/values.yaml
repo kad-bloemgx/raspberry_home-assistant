@@ -1,0 +1,17 @@
+replicaCount: 1
+
+appName: homeassistant2
+nameSpace: home-assistant2
+
+image:
+  repository: homeassistant/home-assistant
+  tag: "2026.9"
+
+container:
+  port: 8123
+
+externalHost: home-assistant2.gerardbloemendaal.freemyip.com
+
+coiot:
+  enabled: true
+  nodePort: 30037

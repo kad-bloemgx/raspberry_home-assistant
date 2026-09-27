@@ -1,0 +1,17 @@
+kind: IngressRoute
+apiVersion: traefik.io/v1alpha1
+
+metadata:
+  name: homeassistant2-ingressroute
+  namespace: {{ .Values.nameSpace }}
+spec:
+  entryPoints:
+    - websecure
+  routes:
+    - match: Host(`{{ .Values.externalHost }}`) && PathPrefix(`/`)
+      kind: Rule
+      services:
+        - name: {{ .Values.appName }}
+          port: {{ .Values.container.port }}
+  tls:
+    certResolver: myresolver
