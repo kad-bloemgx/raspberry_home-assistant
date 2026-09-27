@@ -1,7 +1,7 @@
 replicaCount: 1
 
-appName: homeassistant2
-nameSpace: home-assistant2
+appName: home-assistant
+nameSpace: home-assistant
 
 image:
   repository: homeassistant/home-assistant
@@ -10,7 +10,7 @@ image:
 container:
   port: 8123
 
-externalHost: home-assistant2.gerardbloemendaal.freemyip.com
+externalHost: home-assistant.gerardbloemendaal.freemyip.com
 
 coiot:
   enabled: true
