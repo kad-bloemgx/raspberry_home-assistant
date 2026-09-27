@@ -10,7 +10,7 @@ metadata:
 spec:
   accessModes:
     - ReadWriteOnce
-  storageClassName: local-path
+  storageClassName: {{ .Values.persistence.storageClass }}
   resources:
     requests:
-      storage: 10Gi
+      storage: {{ .Values.persistence.size }}

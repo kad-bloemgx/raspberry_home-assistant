@@ -10,6 +10,10 @@ image:
 container:
   port: 8123
 
+persistence:
+  storageClass: local-path
+  size: 10Gi
+
 externalHost: home-assistant.gerardbloemendaal.freemyip.com
 
 coiot:
