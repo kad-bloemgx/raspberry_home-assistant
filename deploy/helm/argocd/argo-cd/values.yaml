@@ -21,6 +21,8 @@ argo-cd:
       metadata:
         name: raspberry-home-assistant-apps
         namespace: argo-cd
+        annotations:
+          argocd.argoproj.io/ignore-healthcheck: "true"
       spec:
         strategy:
           type: RollingSync
