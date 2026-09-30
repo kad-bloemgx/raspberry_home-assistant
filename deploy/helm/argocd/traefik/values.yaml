@@ -26,6 +26,8 @@ traefik:
   persistence:
     enabled: true
     storageClass: local-path-retain
+    annotations:
+      argocd.argoproj.io/sync-options: Delete=false,Prune=false
 
   ports:
     traefik:

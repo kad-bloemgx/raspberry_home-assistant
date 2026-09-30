@@ -3,7 +3,7 @@ name: traefik
 description: Traefik deployment chart managed by Argo CD
 
 type: application
-version: 1.0.13
+version: 1.0.14
 appVersion: "v3.7.0"
 
 dependencies:
