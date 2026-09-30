@@ -14,4 +14,7 @@ postgresql:
     persistence:
       enabled: true
       size: 10Gi
-      storageClass: local-path
+      storageClass: local-path-retain
+      annotations:
+        helm.sh/resource-policy: keep
+        argocd.argoproj.io/sync-options: Delete=false,Prune=false
