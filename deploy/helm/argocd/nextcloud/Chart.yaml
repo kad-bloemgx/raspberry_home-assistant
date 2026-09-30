@@ -1,0 +1,11 @@
+apiVersion: v2
+name: nextcloud-wrapper
+description: Nextcloud deployment managed by Argo CD
+type: application
+version: 0.1.0
+appVersion: "35.0.1"
+
+dependencies:
+  - name: nextcloud
+    version: 9.4.0
+    repository: https://nextcloud.github.io/helm/

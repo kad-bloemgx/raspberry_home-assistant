@@ -1,0 +1,74 @@
+nextcloud:
+  fullnameOverride: nextcloud
+
+  nextcloud:
+    host: nextcloud.gerardbloemendaal.freemyip.com
+    trustedDomains:
+      - nextcloud.gerardbloemendaal.freemyip.com
+    configs:
+      proxy.config.php: |-
+        <?php
+        $CONFIG = array (
+          'trusted_proxies' => array (
+            0 => '10.42.0.0/16',
+            1 => '10.43.0.0/16',
+          ),
+          'forwarded_for_headers' => array ('HTTP_X_FORWARDED_FOR'),
+        );
+    existingSecret:
+      enabled: true
+      secretName: nextcloud-credentials
+      usernameKey: nextcloud-username
+      passwordKey: nextcloud-password
+
+  phpClientHttpsFix:
+    enabled: true
+    protocol: https
+
+  internalDatabase:
+    enabled: false
+
+  externalDatabase:
+    enabled: true
+    type: mysql
+    existingSecret:
+      enabled: true
+      secretName: nextcloud-mariadb
+      usernameKey: db-username
+      passwordKey: db-password
+
+  mariadb:
+    enabled: true
+    auth:
+      database: nextcloud
+      username: nextcloud
+      existingSecret: nextcloud-mariadb
+    primary:
+      persistence:
+        enabled: true
+        storageClass: local-path-retain
+        size: 10Gi
+        annotations:
+          helm.sh/resource-policy: keep
+          argocd.argoproj.io/sync-options: Delete=false,Prune=false
+
+  ingress:
+    enabled: false
+
+  service:
+    type: ClusterIP
+
+  persistence:
+    enabled: true
+    storageClass: local-path-retain
+    size: 100Gi
+    annotations:
+      argocd.argoproj.io/sync-options: Delete=false,Prune=false
+
+  cronjob:
+    enabled: true
+    type: cronjob
+
+ingress:
+  enabled: true
+  host: nextcloud.gerardbloemendaal.freemyip.com

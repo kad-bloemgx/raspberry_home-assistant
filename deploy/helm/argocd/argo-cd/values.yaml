@@ -45,6 +45,7 @@ argo-cd:
                     operator: In
                     values:
                       - home-assistant
+                      - nextcloud
                       - pgadmin
               - matchExpressions:
                   - key: app.kubernetes.io/name
