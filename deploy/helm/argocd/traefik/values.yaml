@@ -15,9 +15,17 @@ traefik:
     - --accesslog
     - --certificatesresolvers.myresolver.acme.tlschallenge=true
     - --certificatesresolvers.myresolver.acme.email=gerard.bloemendaal@gmail.com
-    - --certificatesresolvers.myresolver.acme.storage=acme.json
+    - --certificatesresolvers.myresolver.acme.storage=/data/acme.json
     - --certificatesresolvers.myresolver.acme.caserver=https://acme-v02.api.letsencrypt.org/directory
     - --serversTransport.insecureSkipVerify=true
+
+  service:
+    spec:
+      type: LoadBalancer
+
+  persistence:
+    enabled: true
+    storageClass: local-path-retain
 
   ports:
     traefik:
