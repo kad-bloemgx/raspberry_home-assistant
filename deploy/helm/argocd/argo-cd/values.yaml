@@ -8,6 +8,7 @@ argo-cd:
 
   configs:
     params:
+      applicationsetcontroller.enable.progressive.syncs: true
       server.insecure: true
     repositories:
       raspberry-home-assistant:
@@ -21,6 +22,33 @@ argo-cd:
         name: raspberry-home-assistant-apps
         namespace: argo-cd
       spec:
+        strategy:
+          type: RollingSync
+          rollingSync:
+            steps:
+              - matchExpressions:
+                  - key: app.kubernetes.io/name
+                    operator: In
+                    values:
+                      - argo-cd
+                      - storage
+              - matchExpressions:
+                  - key: app.kubernetes.io/name
+                    operator: In
+                    values:
+                      - traefik
+                      - postgresql
+              - matchExpressions:
+                  - key: app.kubernetes.io/name
+                    operator: In
+                    values:
+                      - home-assistant
+                      - pgadmin
+              - matchExpressions:
+                  - key: app.kubernetes.io/name
+                    operator: In
+                    values:
+                      - demo-app
         generators:
           - git:
               repoURL: https://github.com/kad-bloemgx/raspberry_home-assistant.git
@@ -31,6 +59,8 @@ argo-cd:
           metadata:
             name: "{{`{{path.basename}}`}}"
             namespace: argo-cd
+            labels:
+              app.kubernetes.io/name: "{{`{{path.basename}}`}}"
           spec:
             project: default
             source:
@@ -54,4 +84,3 @@ argo-cd:
 ingress:
   enabled: true
   host: argocd.gerardbloemendaal.freemyip.com
-
