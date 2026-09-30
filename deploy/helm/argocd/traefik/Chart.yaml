@@ -1,0 +1,12 @@
+apiVersion: v2
+name: traefik
+description: Traefik deployment chart managed by Argo CD
+
+type: application
+version: 1.0.12
+appVersion: "v3.6.7"
+
+dependencies:
+  - name: traefik
+    version: 39.0.0
+    repository: https://traefik.github.io/charts

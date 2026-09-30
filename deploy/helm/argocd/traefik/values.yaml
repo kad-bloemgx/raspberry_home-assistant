@@ -1,0 +1,31 @@
+traefik:
+  deployment:
+    replicas: 1
+
+  logs:
+    general:
+      level: DEBUG
+
+  providers:
+    kubernetesIngress:
+      enabled: false
+
+  additionalArguments:
+    - --api.insecure
+    - --accesslog
+    - --certificatesresolvers.myresolver.acme.tlschallenge=true
+    - --certificatesresolvers.myresolver.acme.email=gerard.bloemendaal@gmail.com
+    - --certificatesresolvers.myresolver.acme.storage=acme.json
+    - --certificatesresolvers.myresolver.acme.caserver=https://acme-v02.api.letsencrypt.org/directory
+    - --serversTransport.insecureSkipVerify=true
+
+  ports:
+    traefik:
+      expose:
+        default: true
+    web:
+      port: 8000
+      exposedPort: 8000
+    websecure:
+      port: 4443
+      exposedPort: 4443
