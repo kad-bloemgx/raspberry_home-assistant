@@ -3,6 +3,8 @@ replicaCount: 1
 appName: openvpn
 nameSpace: openvpn
 
+externalHost: openvpn.gerardbloemendaal.freemyip.com
+
 image:
   repository: openvpn/openvpn-as
   tag: "latest"
