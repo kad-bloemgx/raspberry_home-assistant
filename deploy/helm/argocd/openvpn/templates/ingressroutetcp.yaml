@@ -11,4 +11,4 @@ spec:
     - match: HostSNI(`*`)
       services:
         - name: {{ .Values.appName }}
-          port: {{ .Values.container.portTCP }}
+          port: openvpn-tcp

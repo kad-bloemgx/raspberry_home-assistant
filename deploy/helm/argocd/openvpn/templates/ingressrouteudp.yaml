@@ -10,4 +10,4 @@ spec:
   routes:
     - services:
         - name: {{ .Values.appName }}
-          port: {{ .Values.container.portUDP }}
+          port: openvpn-udp

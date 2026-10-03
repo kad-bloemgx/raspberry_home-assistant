@@ -30,10 +30,14 @@ spec:
             mountPath: "/openvpn"
           ports:
             - containerPort: {{ .Values.container.portTCP }}
-              name: {{ .Values.appName }}
+              name: openvpn-tcp
+              protocol: TCP
             - containerPort: {{ .Values.container.portUDP }}
               name: openvpn-udp
               protocol: UDP
+            - containerPort: {{ .Values.container.portAdmin }}
+              name: admin
+              protocol: TCP
       volumes:
         - name: dev-net-tun
           hostPath:

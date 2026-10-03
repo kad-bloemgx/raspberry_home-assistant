@@ -11,7 +11,7 @@ spec:
     app: {{ .Values.appName }}
   type: ClusterIP
   ports:
-    - name: openvpn
+    - name: openvpn-tcp
       port: {{.Values.container.portTCP}}
       protocol: TCP
       targetPort: {{.Values.container.portTCP}}
@@ -19,7 +19,7 @@ spec:
       port: {{ .Values.container.portUDP }}
       protocol: UDP
       targetPort: {{ .Values.container.portUDP }}
-    - name: ui
+    - name: admin
       port: {{ .Values.container.portAdmin }}
       protocol: TCP
       targetPort: {{ .Values.container.portAdmin }}
