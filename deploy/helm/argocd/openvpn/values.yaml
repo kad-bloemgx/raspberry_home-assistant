@@ -1,0 +1,17 @@
+replicaCount: 1
+
+appName: openvpn
+nameSpace: openvpn
+
+image:
+  repository: openvpn/openvpn-as
+  tag: "latest"
+
+container:
+  portAdmin: 943
+  portTCP: 443
+  portUDP: 1194
+
+persistence:
+  storageClass: local-path-retain
+  size: 5Gi

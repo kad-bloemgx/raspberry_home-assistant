@@ -52,6 +52,11 @@ argo-cd:
                     operator: In
                     values:
                       - demo-app
+              - matchExpressions:
+                  - key: app.kubernetes.io/name
+                    operator: In
+                    values:
+                      - openvpn
         generators:
           - git:
               repoURL: https://github.com/kad-bloemgx/raspberry_home-assistant.git

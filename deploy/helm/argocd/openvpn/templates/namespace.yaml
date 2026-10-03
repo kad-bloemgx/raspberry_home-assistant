@@ -1,0 +1,8 @@
+kind: Namespace
+apiVersion: v1
+
+metadata:
+  name:  {{ .Values.nameSpace }}
+  annotations:
+    "helm.sh/resource-policy": keep
+    argocd.argoproj.io/sync-options: Delete=false,Prune=false
