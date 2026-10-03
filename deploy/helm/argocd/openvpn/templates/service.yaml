@@ -15,3 +15,7 @@ spec:
       port: {{.Values.container.portTCP}}
       protocol: TCP
       targetPort: {{.Values.container.portTCP}}
+    - name: ui
+      port: {{ .Values.container.portAdmin }}
+      protocol: TCP
+      targetPort: {{ .Values.container.portAdmin }}

@@ -12,6 +12,7 @@ spec:
       kind: Rule
       services:
         - name: {{ .Values.appName }}
-          port: {{ .Values.container.port }}
+          port: {{ .Values.container.portAdmin }}
+          scheme: https
   tls:
     certResolver: myresolver
