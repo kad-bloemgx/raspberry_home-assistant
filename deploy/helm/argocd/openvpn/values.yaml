@@ -5,6 +5,10 @@ nameSpace: openvpn
 
 externalHost: openvpn.gerardbloemendaal.freemyip.com
 
+ingress:
+  tcp:
+    entryPoint: openvpn
+
 image:
   repository: openvpn/openvpn-as
   tag: "latest"

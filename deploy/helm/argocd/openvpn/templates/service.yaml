@@ -2,17 +2,16 @@ kind: Service
 apiVersion: v1
 
 metadata:
-  name: openvpn
+  name: {{ .Values.appName }}
   namespace: {{ .Values.nameSpace }}
   labels:
     app: {{ .Values.appName }}
 spec:
   selector:
     app: {{ .Values.appName }}
-  type: NodePort
+  type: ClusterIP
   ports:
     - name: openvpn
       port: {{.Values.container.portTCP}}
       protocol: TCP
       targetPort: {{.Values.container.portTCP}}
-      nodePort: 30051
