@@ -29,9 +29,6 @@ spec:
           - name: pv-storage-openvpn
             mountPath: "/openvpn"
           ports:
-            - containerPort: {{ .Values.container.portTCP }}
-              name: openvpn-tcp
-              protocol: TCP
             - containerPort: {{ .Values.container.portUDP }}
               name: openvpn-udp
               protocol: UDP
