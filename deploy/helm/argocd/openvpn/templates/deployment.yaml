@@ -31,6 +31,9 @@ spec:
           ports:
             - containerPort: {{ .Values.container.portTCP }}
               name: {{ .Values.appName }}
+            - containerPort: {{ .Values.container.portUDP }}
+              name: openvpn-udp
+              protocol: UDP
       volumes:
         - name: dev-net-tun
           hostPath:

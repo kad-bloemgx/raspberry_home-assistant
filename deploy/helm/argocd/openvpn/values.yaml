@@ -8,6 +8,8 @@ externalHost: openvpn.gerardbloemendaal.freemyip.com
 ingress:
   tcp:
     entryPoint: openvpn
+  udp:
+    entryPoint: openvpn-udp
 
 image:
   repository: openvpn/openvpn-as

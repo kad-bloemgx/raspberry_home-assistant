@@ -45,3 +45,9 @@ traefik:
       protocol: TCP
       expose:
         default: true
+    openvpn-udp:
+      port: 1194
+      exposedPort: 1194
+      protocol: UDP
+      expose:
+        default: true

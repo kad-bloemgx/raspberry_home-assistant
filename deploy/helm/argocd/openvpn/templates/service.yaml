@@ -15,6 +15,10 @@ spec:
       port: {{.Values.container.portTCP}}
       protocol: TCP
       targetPort: {{.Values.container.portTCP}}
+    - name: openvpn-udp
+      port: {{ .Values.container.portUDP }}
+      protocol: UDP
+      targetPort: {{ .Values.container.portUDP }}
     - name: ui
       port: {{ .Values.container.portAdmin }}
       protocol: TCP
